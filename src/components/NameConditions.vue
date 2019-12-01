@@ -1,6 +1,7 @@
 <template>
   <div v-if="conditions">
-    <h3>Your Name Conditions</h3>
+    <hr />
+    <h3>Your Name Conditions:</h3>
     <blockquote>
       <p>
         Sometimes, a character will have a plot-based condition that affects
@@ -10,7 +11,7 @@
     </blockquote>
 
     <div v-if="isKojima">
-      <h4>The Kojima Condition</h4>
+      <h4>You have the Kojima Condition</h4>
       <p>
         Oh no. You are Hideo Kojima. Hideo Kojima created you and is also you.
         You are the man who created himself and there is nothing you can do
@@ -22,17 +23,17 @@
 
     <div v-else>
       <div v-if="isMan">
-        <h4>The -Man Condition</h4>
+        <h4>You have the “Man” Condition</h4>
         <p>Your last name will include the suffix <em>-man</em>.</p>
       </div>
 
       <div v-if="isBig">
-        <h4>The Big Condition</h4>
+        <h4>You have the “Big” Condition</h4>
         <p>You’re big. Your name must have “Big” at the beginning of it.</p>
       </div>
 
       <div v-if="isOld">
-        <h4>The Old Condition</h4>
+        <h4>You have the “Old” Condition</h4>
         <p>
           You are older than you once were. Your name must have “Old” at the
           beginning of it.
@@ -40,23 +41,27 @@
       </div>
 
       <div v-if="isCurrentCondition">
-        <h4>The Current Condition</h4>
+        <h4>You have the “Your Current Condition” Condition</h4>
         <p>
           You are how you currently are. Add the condition your body is current
           in to the beginning of your name.
         </p>
-        <p>(Currently hard-wired to return “Bloated”.)</p>
+        <p><small>(Currently hard-wired to return “Bloated”.)</small></p>
       </div>
 
       <div v-if="isClone">
-        <h4>The Clone Condition</h4>
+        <h4>You have the Clone Condition</h4>
         <p>
           You are a clone of someone else, or you have been brainwashed into
           becoming a mental doppelganger of someone else. Find someone who has
           completed this worksheet and replace 50% of your Kojima name with 50%
           of their Kojima name.
         </p>
-        <p>(Currently hard-wired to replace your last name with “Snake”.)</p>
+        <p>
+          <small>
+            (Currently hard-wired to replace your last name with “Snake”.)
+          </small>
+        </p>
       </div>
     </div>
   </div>
