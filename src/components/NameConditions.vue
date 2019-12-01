@@ -13,7 +13,7 @@
     </header>
 
     <div v-if="isKojima">
-      <h4>You have the Kojima Condition</h4>
+      <h4>You have the <strong>Kojima Condition</strong></h4>
       <p>
         Oh no. You are Hideo Kojima. Hideo Kojima created you and is also you.
         You are the man who created himself and there is nothing you can do
@@ -25,17 +25,17 @@
 
     <div v-else>
       <div v-if="isMan">
-        <h4>You have the “Man” Condition</h4>
+        <h4>You have the <strong>“Man” Condition</strong></h4>
         <p>Your last name will include the suffix <em>-man</em>.</p>
       </div>
 
       <div v-if="isBig">
-        <h4>You have the “Big” Condition</h4>
+        <h4>You have the <strong>“Big” Condition</strong></h4>
         <p>You’re big. Your name must have “Big” at the beginning of it.</p>
       </div>
 
       <div v-if="isOld">
-        <h4>You have the “Old” Condition</h4>
+        <h4>You have the <strong>“Old” Condition</strong></h4>
         <p>
           You are older than you once were. Your name must have “Old” at the
           beginning of it.
@@ -43,7 +43,9 @@
       </div>
 
       <div v-if="isCurrentCondition">
-        <h4>You have the “Your Current Condition” Condition</h4>
+        <h4>
+          You have the <strong>“Your Current Condition” Condition</strong>
+        </h4>
         <p>
           You are how you currently are. Add the condition your body is current
           in to the beginning of your name.
@@ -52,7 +54,7 @@
       </div>
 
       <div v-if="isClone">
-        <h4>You have the Clone Condition</h4>
+        <h4>You have the <strong>Clone Condition</strong></h4>
         <p>
           You are a clone of someone else, or you have been brainwashed into
           becoming a mental doppelganger of someone else. Find someone who has

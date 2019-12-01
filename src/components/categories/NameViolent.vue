@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h3>You have a VIOLENT NAME</h3>
+    <h4>You have a <strong>Violent Name</strong></h4>
     <blockquote>
       <p>
         Sometimes, a Kojima name can be very threatening and violent, like
         Sniper Wolf, or The Fury. Now you can also be threatening and violent.
       </p>
     </blockquote>
-    <h4>Examples:</h4>
+    <h5>Examples:</h5>
     <ul>
       <li>Machinegun Kid (Metal Gear)</li>
       <li>Sniper Wolf (MGS)</li>

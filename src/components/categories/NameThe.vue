@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>You have a “THE” NAME</h3>
+    <h4>You have a <strong>“The” Name</strong></h4>
     <blockquote>
       <p>
         Kojima loves to make people have names that start with the word “The”
@@ -8,7 +8,7 @@
         unstoppable force.
       </p>
     </blockquote>
-    <h4>Examples:</h4>
+    <h5>Examples:</h5>
     <ul>
       <li>The Pain (MGS3)</li>
       <li>The Sorrow (MGS3)</li>

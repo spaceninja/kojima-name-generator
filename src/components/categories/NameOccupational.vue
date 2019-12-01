@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>You have an OCCUPATIONAL NAME</h3>
+    <h4>You have an <strong>Occupational Name</strong></h4>
     <blockquote>
       <p>
         Kojima’s characters tend to be driven by the work that they do. That
@@ -8,7 +8,7 @@
         your job.
       </p>
     </blockquote>
-    <h4>Examples:</h4>
+    <h5>Examples:</h5>
     <ul>
       <li>Deadman (Death Stranding)</li>
       <li>Fire Trooper (Metal Gear)</li>

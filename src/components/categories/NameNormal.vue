@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>You have a NORMAL NAME</h3>
+    <h4>You have a <strong>Normal Name</strong></h4>
     <blockquote>
       <p>
         Kojima’s early work includes lots of characters that have names that are
@@ -10,7 +10,7 @@
         Probably.
       </p>
     </blockquote>
-    <h4>Examples:</h4>
+    <h5>Examples:</h5>
     <ul>
       <li>Ed Brown (Policenauts)</li>
       <li>Michael Saito (Policenauts)</li>
