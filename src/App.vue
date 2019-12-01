@@ -22,6 +22,7 @@ export default {
 </script>
 
 <style lang="scss">
+// TODO: move to static file so this isn't inlined on every page or use min version
 @import './assets/css/reboot.css';
 
 body {
