@@ -5,7 +5,6 @@
       You are born to Hideo Kojima: How does he name you? Follow our
       comprehensive guide to finding your Kojima Name.
     </p>
-    <hr />
   </header>
 </template>
 

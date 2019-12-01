@@ -14,7 +14,9 @@
       <li>Fire Trooper (Metal Gear)</li>
       <li>Sam Porter Bridges (Death Stranding)</li>
     </ul>
-    <button @click="$emit('name-change', 'Sam Porter Bridges')">
+    <button
+      @click="$emit('name-change', { firstName: 'Fire', lastName: 'Trooper' })"
+    >
       Set Name
     </button>
   </div>

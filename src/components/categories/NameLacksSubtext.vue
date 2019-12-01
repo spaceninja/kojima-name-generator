@@ -13,7 +13,9 @@
       <li>Para-Medic (MGS3)</li>
       <li>Fatman (MGS2)</li>
     </ul>
-    <button @click="$emit('name-change', 'The Boss')">
+    <button
+      @click="$emit('name-change', { firstName: 'Para', lastName: 'Medic' })"
+    >
       Set Name
     </button>
   </div>

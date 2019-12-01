@@ -1,5 +1,5 @@
 <template>
-  <div v-if="conditions">
+  <section v-if="conditions">
     <hr />
     <header v-if="!isKojima">
       <h3>Your Name Conditions:</h3>
@@ -66,7 +66,7 @@
         </p>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

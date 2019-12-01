@@ -14,12 +14,19 @@
       <li>The Sorrow (MGS3)</li>
       <li>The Viscount (MGSV)</li>
     </ul>
-    <button @click="$emit('name-change', 'The Viscount')">
+    <button @click="setName('Viscount')">
       Set Name
     </button>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    setName(lastName) {
+      this.$emit('conditions-change', { isThe: true });
+      this.$emit('name-change', { firstName: '', lastName: lastName });
+    },
+  },
+};
 </script>

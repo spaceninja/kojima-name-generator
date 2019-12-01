@@ -13,7 +13,11 @@
       <li>Sniper Wolf (MGS)</li>
       <li>The Fury (MGS3)</li>
     </ul>
-    <button @click="$emit('name-change', 'Machinegun Kid')">
+    <button
+      @click="
+        $emit('name-change', { firstName: 'Machinegun', lastName: 'Kid' })
+      "
+    >
       Set Name
     </button>
   </div>

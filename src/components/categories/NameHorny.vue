@@ -13,7 +13,9 @@
       <li>Liquid Snake (MGS)</li>
       <li>Solid Snake (Metal Gear)</li>
     </ul>
-    <button @click="$emit('name-change', 'Naked Snake')">
+    <button
+      @click="$emit('name-change', { firstName: 'Naked', lastName: 'Snake' })"
+    >
       Set Name
     </button>
   </div>

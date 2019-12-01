@@ -13,7 +13,9 @@
       <li>Skull Face (MGSV)</li>
       <li>Dr. Strangelove (MGSV)</li>
     </ul>
-    <button @click="$emit('name-change', 'Skull Face')">
+    <button
+      @click="$emit('name-change', { firstName: 'Skull', lastName: 'Face' })"
+    >
       Set Name
     </button>
   </div>

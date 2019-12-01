@@ -16,7 +16,11 @@
       <li>Michael Saito (Policenauts)</li>
       <li>Ivan Rodriguez (Snatcher)</li>
     </ul>
-    <button @click="$emit('name-change', 'Boring McNormalName')">
+    <button
+      @click="
+        $emit('name-change', { firstName: 'Boring', lastName: 'McNormalname' })
+      "
+    >
       Set Name
     </button>
   </div>

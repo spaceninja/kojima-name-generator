@@ -1,25 +1,33 @@
 <template>
   <main>
-    <section v-if="name">
-      <h2>
-        Your Name is <strong>{{ fullName }}</strong>
-      </h2>
+    <section v-if="fullName">
       <hr />
+      <h2>
+        Your Name is <strong>{{ displayName }}</strong>
+      </h2>
     </section>
 
-    <NameNormal v-if="hasNormalName && !isKojima" @name-change="setName" />
-    <NameOccupational
-      v-if="hasOccupationalName && !isKojima"
-      @name-change="setName"
-    />
-    <NameHorny v-if="hasHornyName && !isKojima" @name-change="setName" />
-    <NameThe v-if="hasTheName && !isKojima" @name-change="setName" />
-    <NameCool v-if="hasCoolName && !isKojima" @name-change="setName" />
-    <NameViolent v-if="hasViolentName && !isKojima" @name-change="setName" />
-    <NameLacksSubtext
-      v-if="hasLacksSubtextName && !isKojima"
-      @name-change="setName"
-    />
+    <section v-if="!activeConditions.isKojima">
+      <hr />
+      <blockquote>
+        <p>
+          Kojima names fall into a finite number of categories. This section
+          will determine the category in which your name belongs.
+        </p>
+      </blockquote>
+
+      <NameNormal v-if="hasNormalName" @name-change="setName" />
+      <NameOccupational v-if="hasOccupationalName" @name-change="setName" />
+      <NameHorny v-if="hasHornyName" @name-change="setName" />
+      <NameThe
+        v-if="hasTheName"
+        @name-change="setName"
+        @conditions-change="setConditions"
+      />
+      <NameCool v-if="hasCoolName" @name-change="setName" />
+      <NameViolent v-if="hasViolentName" @name-change="setName" />
+      <NameLacksSubtext v-if="hasLacksSubtextName" @name-change="setName" />
+    </section>
 
     <NameConditions @conditions-change="setConditions" />
   </main>
@@ -49,8 +57,9 @@ export default {
   },
   data() {
     return {
-      activeConditions: null,
-      name: '',
+      activeConditions: {},
+      firstName: '',
+      lastName: '',
       nameCategory: getRandomInt(1, 20),
     };
   },
@@ -76,44 +85,54 @@ export default {
     hasLacksSubtextName() {
       return this.nameCategory === 20 ? true : false;
     },
-    isClone() {
-      return this.activeConditions && this.activeConditions.isClone
-        ? true
-        : false;
-    },
-    isKojima() {
-      return this.activeConditions && this.activeConditions.isKojima
-        ? true
-        : false;
+    fullName() {
+      // special case for Hideo Kojima
+      if (this.activeConditions.isKojima) {
+        return 'Hideo Kojima';
+      }
+
+      // set to null if both are missing so we can hide the results block
+      if (!this.firstName && !this.lastName) {
+        return null;
+      }
+
+      // force clones to have the last name "Snake"
+      if (this.activeConditions.isClone) {
+        return `${this.firstName} Snake`;
+      }
+
+      // okay, we have a name!
+      return `${this.firstName} ${this.lastName}`;
     },
     nameSuffix() {
-      return this.activeConditions && this.activeConditions.isMan ? '-man' : '';
+      let suffix = '';
+      if (this.activeConditions.isMan) suffix += '-man';
+      if (this.activeConditions.isClone) suffix += ' (clone)';
+      return suffix;
     },
     namePrefix() {
-      if (this.activeConditions) {
-        if (this.activeConditions.isBig) return 'Big ';
-        if (this.activeConditions.isOld) return 'Old ';
-        if (this.activeConditions.isCurrentCondition) return 'Bloated ';
-      }
-      return '';
+      let prefix = '';
+      if (this.activeConditions.isThe) prefix += 'The ';
+      if (this.activeConditions.isBig) prefix += 'Big ';
+      if (this.activeConditions.isOld) prefix += 'Old ';
+      if (this.activeConditions.isCurrentCondition) prefix += 'Bloated ';
+      return prefix;
     },
-    fullName() {
-      if (this.isKojima) return this.name;
+    displayName() {
+      if (this.activeConditions.isKojima) return this.fullName;
 
-      let name = `${this.namePrefix}${this.name}${this.nameSuffix}`;
-
-      if (this.isClone) name += ' Snake (Clone)';
+      let name = `${this.namePrefix}${this.fullName}${this.nameSuffix}`;
 
       return name;
     },
   },
   methods: {
     setName(name) {
-      this.name = name;
+      this.firstName = name.firstName;
+      this.lastName = name.lastName;
     },
     setConditions(conditions) {
-      this.activeConditions = conditions;
-      if (this.activeConditions.isKojima) this.setName('Hideo Kojima');
+      this.activeConditions = { ...conditions, ...this.activeConditions };
     },
   },
 };
