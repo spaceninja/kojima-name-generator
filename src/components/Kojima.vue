@@ -18,7 +18,7 @@
       @name-change="setName"
     />
 
-    <NameConditions @conditions="setConditions" />
+    <NameConditions @conditions-change="setConditions" />
   </main>
 </template>
 

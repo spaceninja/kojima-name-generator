@@ -104,7 +104,7 @@ export default {
       if (this.isKojima) activeConditions.isKojima = true;
 
       // return the active conditions to the main app
-      this.$emit('conditions', activeConditions);
+      this.$emit('conditions-change', activeConditions);
 
       return Object.keys(activeConditions).length > 0 ? activeConditions : null;
     },
