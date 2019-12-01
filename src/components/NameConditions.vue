@@ -1,14 +1,16 @@
 <template>
   <div v-if="conditions">
     <hr />
-    <h3>Your Name Conditions:</h3>
-    <blockquote>
-      <p>
-        Sometimes, a character will have a plot-based condition that affects
-        their name. You, too, might have a condition that affects your name.
-        Conditions can stack.
-      </p>
-    </blockquote>
+    <header v-if="!isKojima">
+      <h3>Your Name Conditions:</h3>
+      <blockquote>
+        <p>
+          Sometimes, a character will have a plot-based condition that affects
+          their name. You, too, might have a condition that affects your name.
+          Conditions can stack.
+        </p>
+      </blockquote>
+    </header>
 
     <div v-if="isKojima">
       <h4>You have the Kojima Condition</h4>

@@ -7,13 +7,19 @@
       <hr />
     </section>
 
-    <NameNormal v-if="hasNormalName" @name-change="setName" />
-    <NameOccupational v-if="hasOccupationalName" @name-change="setName" />
-    <NameHorny v-if="hasHornyName" @name-change="setName" />
-    <NameThe v-if="hasTheName" @name-change="setName" />
-    <NameCool v-if="hasCoolName" @name-change="setName" />
-    <NameViolent v-if="hasViolentName" @name-change="setName" />
-    <NameLacksSubtext v-if="hasLacksSubtextName" @name-change="setName" />
+    <NameNormal v-if="hasNormalName && !isKojima" @name-change="setName" />
+    <NameOccupational
+      v-if="hasOccupationalName && !isKojima"
+      @name-change="setName"
+    />
+    <NameHorny v-if="hasHornyName && !isKojima" @name-change="setName" />
+    <NameThe v-if="hasTheName && !isKojima" @name-change="setName" />
+    <NameCool v-if="hasCoolName && !isKojima" @name-change="setName" />
+    <NameViolent v-if="hasViolentName && !isKojima" @name-change="setName" />
+    <NameLacksSubtext
+      v-if="hasLacksSubtextName && !isKojima"
+      @name-change="setName"
+    />
 
     <NameConditions @conditions-change="setConditions" />
   </main>
@@ -71,22 +77,28 @@ export default {
       return this.nameCategory === 20 ? true : false;
     },
     isClone() {
-      return this.activeConditions.isClone ? true : false;
+      return this.activeConditions && this.activeConditions.isClone
+        ? true
+        : false;
     },
     isKojima() {
-      return this.activeConditions.isKojima ? true : false;
+      return this.activeConditions && this.activeConditions.isKojima
+        ? true
+        : false;
     },
     nameSuffix() {
-      return this.activeConditions.isMan ? '-man' : '';
+      return this.activeConditions && this.activeConditions.isMan ? '-man' : '';
     },
     namePrefix() {
-      if (this.activeConditions.isBig) return 'Big ';
-      if (this.activeConditions.isOld) return 'Old ';
-      if (this.activeConditions.isCurrentCondition) return 'Bloated ';
+      if (this.activeConditions) {
+        if (this.activeConditions.isBig) return 'Big ';
+        if (this.activeConditions.isOld) return 'Old ';
+        if (this.activeConditions.isCurrentCondition) return 'Bloated ';
+      }
       return '';
     },
     fullName() {
-      if (this.isKojima) return 'Hideo Kojima';
+      if (this.isKojima) return this.name;
 
       let name = `${this.namePrefix}${this.name}${this.nameSuffix}`;
 
@@ -101,6 +113,7 @@ export default {
     },
     setConditions(conditions) {
       this.activeConditions = conditions;
+      if (this.activeConditions.isKojima) this.setName('Hideo Kojima');
     },
   },
 };
