@@ -115,6 +115,7 @@ export default {
       // return the active conditions to the main app
       this.$emit('conditions-change', activeConditions);
 
+      // set to null if no conditions are active, so we can hide the descriptions
       return Object.keys(activeConditions).length > 0 ? activeConditions : null;
     },
   },
