@@ -4,13 +4,19 @@
       Your Name is <strong>{{ name }}</strong>
     </h2>
 
-    <NameNormal v-if="hasNormalName" @name-change="setName" />
-    <NameOccupational v-if="hasOccupationalName" @name-change="setName" />
-    <NameHorny v-if="hasHornyName" @name-change="setName" />
-    <NameThe v-if="hasTheName" @name-change="setName" />
-    <NameCool v-if="hasCoolName" @name-change="setName" />
-    <NameViolent v-if="hasViolentName" @name-change="setName" />
-    <NameLacksSubtext v-if="hasLacksSubtextName" @name-change="setName" />
+    <NameNormal v-if="hasNormalName && !name" @name-change="setName" />
+    <NameOccupational
+      v-if="hasOccupationalName && !name"
+      @name-change="setName"
+    />
+    <NameHorny v-if="hasHornyName && !name" @name-change="setName" />
+    <NameThe v-if="hasTheName && !name" @name-change="setName" />
+    <NameCool v-if="hasCoolName && !name" @name-change="setName" />
+    <NameViolent v-if="hasViolentName && !name" @name-change="setName" />
+    <NameLacksSubtext
+      v-if="hasLacksSubtextName && !name"
+      @name-change="setName"
+    />
   </main>
 </template>
 
