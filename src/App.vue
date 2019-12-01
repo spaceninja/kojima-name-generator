@@ -1,28 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <header>
+      <h1>Kojima Name Generator</h1>
+    </header>
+    <hr />
+    <main>
+      <Kojima msg="Welcome to Your Vue.js App" />
+    </main>
+    <hr />
+    <footer>
+      fine print
+    </footer>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import Kojima from './components/Kojima.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    Kojima,
   },
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import './assets/css/reboot.css';
 </style>
