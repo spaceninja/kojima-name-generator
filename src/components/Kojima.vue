@@ -1,7 +1,7 @@
 <template>
   <main>
     <h2 v-if="name">
-      Your Name is <strong>{{ name }}</strong>
+      Your Name is <strong>{{ fullName }}</strong>
     </h2>
 
     <NameNormal v-if="hasNormalName && !name" @name-change="setName" />
@@ -17,18 +17,21 @@
       v-if="hasLacksSubtextName && !name"
       @name-change="setName"
     />
+
+    <NameConditions @conditions="setConditions" />
   </main>
 </template>
 
 <script>
 import getRandomInt from '../scripts/get-random-integer';
-import NameNormal from './NameNormal.vue';
-import NameOccupational from './NameOccupational.vue';
-import NameHorny from './NameHorny.vue';
-import NameThe from './NameThe.vue';
-import NameCool from './NameCool.vue';
-import NameViolent from './NameViolent.vue';
-import NameLacksSubtext from './NameLacksSubtext.vue';
+import NameNormal from './categories/NameNormal.vue';
+import NameOccupational from './categories/NameOccupational.vue';
+import NameHorny from './categories/NameHorny.vue';
+import NameThe from './categories/NameThe.vue';
+import NameCool from './categories/NameCool.vue';
+import NameViolent from './categories/NameViolent.vue';
+import NameLacksSubtext from './categories/NameLacksSubtext.vue';
+import NameConditions from './NameConditions.vue';
 
 export default {
   components: {
@@ -39,9 +42,11 @@ export default {
     NameCool,
     NameViolent,
     NameLacksSubtext,
+    NameConditions,
   },
   data() {
     return {
+      activeConditions: null,
       name: '',
       nameCategory: getRandomInt(1, 20),
     };
@@ -68,10 +73,37 @@ export default {
     hasLacksSubtextName() {
       return this.nameCategory === 20 ? true : false;
     },
+    isClone() {
+      return this.activeConditions.isClone ? true : false;
+    },
+    isKojima() {
+      return this.activeConditions.isKojima ? true : false;
+    },
+    nameSuffix() {
+      return this.activeConditions.isMan ? '-man' : '';
+    },
+    namePrefix() {
+      if (this.activeConditions.isBig) return 'Big ';
+      if (this.activeConditions.isOld) return 'Old ';
+      if (this.activeConditions.isCurrentCondition) return 'Bloated ';
+      return '';
+    },
+    fullName() {
+      if (this.isKojima) return 'Hideo Kojima';
+
+      let name = `${this.namePrefix}${this.name}${this.nameSuffix}`;
+
+      if (this.isClone) name += ' Snake (Clone)';
+
+      return name;
+    },
   },
   methods: {
     setName(name) {
       this.name = name;
+    },
+    setConditions(conditions) {
+      this.activeConditions = conditions;
     },
   },
 };
