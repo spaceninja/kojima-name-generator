@@ -1,26 +1,22 @@
 <template>
   <div id="app">
-    <header>
-      <h1>Kojima Name Generator</h1>
-    </header>
-    <hr />
-    <main>
-      <Kojima msg="Welcome to Your Vue.js App" />
-    </main>
-    <hr />
-    <footer>
-      fine print
-    </footer>
+    <Header />
+    <Kojima />
+    <Footer />
   </div>
 </template>
 
 <script>
+import Header from './components/Header.vue';
 import Kojima from './components/Kojima.vue';
+import Footer from './components/Footer.vue';
 
 export default {
   name: 'App',
   components: {
+    Header,
     Kojima,
+    Footer,
   },
 };
 </script>

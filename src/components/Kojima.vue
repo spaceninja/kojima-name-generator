@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <div>Your Name Category is {{ nameCategory }}</div>
 
     <NameNormal v-if="hasNormalName" />
@@ -9,7 +9,7 @@
     <NameCool v-if="hasCoolName" />
     <NameViolent v-if="hasViolentName" />
     <NameLacksSubtext v-if="hasLacksSubtextName" />
-  </div>
+  </main>
 </template>
 
 <script>
