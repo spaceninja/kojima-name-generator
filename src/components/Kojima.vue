@@ -1,14 +1,16 @@
 <template>
   <main>
-    <div>Your Name Category is {{ nameCategory }}</div>
+    <h2 v-if="name">
+      Your Name is <strong>{{ name }}</strong>
+    </h2>
 
-    <NameNormal v-if="hasNormalName" />
-    <NameOccupational v-if="hasOccupationalName" />
-    <NameHorny v-if="hasHornyName" />
-    <NameThe v-if="hasTheName" />
-    <NameCool v-if="hasCoolName" />
-    <NameViolent v-if="hasViolentName" />
-    <NameLacksSubtext v-if="hasLacksSubtextName" />
+    <NameNormal v-if="hasNormalName" @name-change="setName" />
+    <NameOccupational v-if="hasOccupationalName" @name-change="setName" />
+    <NameHorny v-if="hasHornyName" @name-change="setName" />
+    <NameThe v-if="hasTheName" @name-change="setName" />
+    <NameCool v-if="hasCoolName" @name-change="setName" />
+    <NameViolent v-if="hasViolentName" @name-change="setName" />
+    <NameLacksSubtext v-if="hasLacksSubtextName" @name-change="setName" />
   </main>
 </template>
 
@@ -34,6 +36,7 @@ export default {
   },
   data() {
     return {
+      name: '',
       nameCategory: getRandomInt(1, 20),
     };
   },
@@ -58,6 +61,11 @@ export default {
     },
     hasLacksSubtextName() {
       return this.nameCategory === 20 ? true : false;
+    },
+  },
+  methods: {
+    setName(name) {
+      this.name = name;
     },
   },
 };

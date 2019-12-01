@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>You have a NORMAL NAME</h2>
+    <h3>You have a NORMAL NAME</h3>
     <blockquote>
       <p>
         Kojima’s early work includes lots of characters that have names that are
@@ -10,12 +10,15 @@
         Probably.
       </p>
     </blockquote>
-    <h3>Examples:</h3>
+    <h4>Examples:</h4>
     <ul>
       <li>Ed Brown (Policenauts)</li>
       <li>Michael Saito (Policenauts)</li>
       <li>Ivan Rodriguez (Snatcher)</li>
     </ul>
+    <button @click="$emit('name-change', 'Boring McNormalName')">
+      Set Name
+    </button>
   </div>
 </template>
 
