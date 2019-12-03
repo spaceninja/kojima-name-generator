@@ -29,6 +29,28 @@ body {
   margin: 2rem;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: rgb(38, 50, 56);
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 0;
+    color: currentColor;
+  }
+}
+
 h1 {
   font-size: 2em;
   font-weight: 200;
