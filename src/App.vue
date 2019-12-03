@@ -67,4 +67,13 @@ h6 {
 blockquote {
   font-style: italic;
 }
+
+.form-group {
+  margin: 1em 0;
+}
+
+label {
+  display: block;
+  font-size: smaller;
+}
 </style>

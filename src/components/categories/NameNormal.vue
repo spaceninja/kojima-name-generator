@@ -16,16 +16,41 @@
       <li>Michael Saito (Policenauts)</li>
       <li>Ivan Rodriguez (Snatcher)</li>
     </ul>
-    <button
-      @click="
-        $emit('name-change', { firstName: 'Boring', lastName: 'McNormalname' })
-      "
-    >
+
+    <FormGroup label="First Name" label-for="first-name">
+      <TextInput id="first-name" v-model="firstName" @input="onInput" />
+    </FormGroup>
+
+    <FormGroup label="Last Name" label-for="last-name">
+      <TextInput id="last-name" v-model="lastName" @input="onInput" />
+    </FormGroup>
+
+    <button @click="onInput">
       Set Name
     </button>
   </div>
 </template>
 
 <script>
-export default {};
+import FormGroup from '../forms/FormGroup.vue';
+import TextInput from '../forms/TextInput.vue';
+
+export default {
+  components: {
+    FormGroup,
+    TextInput,
+  },
+  data() {
+    return {
+      firstName: '',
+      lastName: '',
+    };
+  },
+  methods: {
+    onInput() {
+      const name = { firstName: this.firstName, lastName: this.lastName };
+      this.$emit('name-change', name);
+    },
+  },
+};
 </script>
