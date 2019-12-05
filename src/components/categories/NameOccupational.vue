@@ -14,6 +14,9 @@
       <li>Fire Trooper (Metal Gear)</li>
       <li>Sam Porter Bridges (Death Stranding)</li>
     </ul>
+
+    <InfoOccupation @change="setLastName" />
+
     <button
       @click="$emit('name-change', { firstName: 'Fire', lastName: 'Trooper' })"
     >
@@ -23,5 +26,38 @@
 </template>
 
 <script>
-export default {};
+import InfoOccupation from '../info/InfoOccupation.vue';
+
+export default {
+  components: {
+    InfoOccupation,
+  },
+  data() {
+    return {
+      firstName: '',
+      lastName: '',
+    };
+  },
+  computed: {
+    fullName() {
+      return {
+        firstName: this.firstName,
+        lastName: this.lastName,
+      };
+    },
+  },
+  methods: {
+    setFirstName(firstName) {
+      this.firstName = firstName;
+      this.setName(this.fullName);
+    },
+    setLastName(lastName) {
+      this.lastName = lastName;
+      this.setName(this.fullName);
+    },
+    setName(name) {
+      this.$emit('name-change', name);
+    },
+  },
+};
 </script>

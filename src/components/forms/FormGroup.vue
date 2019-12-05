@@ -1,7 +1,7 @@
 <template>
   <div class="form-group">
     <label :for="labelFor">{{ label }}</label>
-    <slot></slot>
+    <slot />
   </div>
 </template>
 

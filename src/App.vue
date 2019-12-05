@@ -96,6 +96,16 @@ blockquote {
 
 label {
   display: block;
-  font-size: smaller;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  display: block;
+}
+
+.form-help-text {
+  display: block;
+  margin-top: 0.25rem;
+  opacity: 75%;
 }
 </style>

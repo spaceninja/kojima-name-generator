@@ -1,11 +1,18 @@
 <template>
   <input
     v-if="type !== 'textarea'"
+    class="form-control"
     :type="type"
     :value="value"
     @input="onInput"
   />
-  <textarea v-else :type="type" :value="value" @input="onInput" />
+  <textarea
+    v-else
+    class="form-control"
+    :type="type"
+    :value="value"
+    @input="onInput"
+  />
 </template>
 
 <script>
