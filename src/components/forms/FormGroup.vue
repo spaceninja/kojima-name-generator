@@ -1,6 +1,6 @@
-<template>
+<template functional>
   <div class="form-group">
-    <label :for="labelFor">{{ label }}</label>
+    <label :for="props.labelFor">{{ props.label }}</label>
     <slot />
   </div>
 </template>

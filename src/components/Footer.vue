@@ -1,4 +1,4 @@
-<template>
+<template functional>
   <footer>
     <hr />
     <p>
