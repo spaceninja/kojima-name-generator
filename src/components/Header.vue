@@ -1,5 +1,5 @@
 <template functional>
-  <header>
+  <header key="header">
     <h1>Kojima Name Generator</h1>
     <p>
       You are born to Hideo Kojima: How does he name you? Follow our
