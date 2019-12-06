@@ -1,12 +1,15 @@
 <template>
   <FormGroup
-    label="What do you do at your occupation?"
-    label-for="info-occupation"
+    label="What is the last thing you did before starting this worksheet?"
+    label-for="info-recent-activity"
   >
-    <TextInput id="info-occupation" v-model="occupation" @input="onInput" />
+    <TextInput
+      id="info-recent-activity"
+      v-model="recentActivity"
+      @input="onInput"
+    />
     <small class="form-help-text">
-      Condense the verb in your answer into a single “-er” noun. (e.g. if you
-      are a sheep farmer, your answer will be “Farmer.”)
+      (e.g. EXAMPLE GOES HERE)
     </small>
   </FormGroup>
 </template>
@@ -22,12 +25,12 @@ export default {
   },
   data() {
     return {
-      occupation: '',
+      recentActivity: '',
     };
   },
   methods: {
     onInput() {
-      this.$emit('change', this.occupation);
+      this.$emit('change', this.recentActivity);
     },
   },
 };

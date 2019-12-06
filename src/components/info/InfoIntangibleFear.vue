@@ -1,12 +1,15 @@
 <template>
   <FormGroup
-    label="What do you do at your occupation?"
-    label-for="info-occupation"
+    label="What is your greatest intangible fear?"
+    label-for="info-intangible-fear"
   >
-    <TextInput id="info-occupation" v-model="occupation" @input="onInput" />
+    <TextInput
+      id="info-intangible-fear"
+      v-model="intangibleFear"
+      @input="onInput"
+    />
     <small class="form-help-text">
-      Condense the verb in your answer into a single “-er” noun. (e.g. if you
-      are a sheep farmer, your answer will be “Farmer.”)
+      (e.g. death, loneliness, fear itself)
     </small>
   </FormGroup>
 </template>
@@ -22,12 +25,12 @@ export default {
   },
   data() {
     return {
-      occupation: '',
+      intangibleFear: '',
     };
   },
   methods: {
     onInput() {
-      this.$emit('change', this.occupation);
+      this.$emit('change', this.intangibleFear);
     },
   },
 };

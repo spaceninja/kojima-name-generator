@@ -1,12 +1,15 @@
 <template>
   <FormGroup
-    label="What do you do at your occupation?"
-    label-for="info-occupation"
+    label="What condition is your body currently in?"
+    label-for="info-body-condition"
   >
-    <TextInput id="info-occupation" v-model="occupation" @input="onInput" />
+    <TextInput
+      id="info-body-condition"
+      v-model="bodyCondition"
+      @input="onInput"
+    />
     <small class="form-help-text">
-      Condense the verb in your answer into a single “-er” noun. (e.g. if you
-      are a sheep farmer, your answer will be “Farmer.”)
+      (single word answer)
     </small>
   </FormGroup>
 </template>
@@ -22,12 +25,12 @@ export default {
   },
   data() {
     return {
-      occupation: '',
+      bodyCondition: '',
     };
   },
   methods: {
     onInput() {
-      this.$emit('change', this.occupation);
+      this.$emit('change', this.bodyCondition);
     },
   },
 };

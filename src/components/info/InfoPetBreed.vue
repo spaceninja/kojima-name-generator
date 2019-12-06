@@ -1,12 +1,11 @@
 <template>
   <FormGroup
-    label="What do you do at your occupation?"
-    label-for="info-occupation"
+    label="What was your first pet’s specific species/breed?"
+    label-for="info-pet-breed"
   >
-    <TextInput id="info-occupation" v-model="occupation" @input="onInput" />
+    <TextInput id="info-pet-breed" v-model="petBreed" @input="onInput" />
     <small class="form-help-text">
-      Condense the verb in your answer into a single “-er” noun. (e.g. if you
-      are a sheep farmer, your answer will be “Farmer.”)
+      If you never had a pet, please answer with an animal you wish you owned.
     </small>
   </FormGroup>
 </template>
@@ -22,12 +21,12 @@ export default {
   },
   data() {
     return {
-      occupation: '',
+      petBreed: '',
     };
   },
   methods: {
     onInput() {
-      this.$emit('change', this.occupation);
+      this.$emit('change', this.petBreed);
     },
   },
 };

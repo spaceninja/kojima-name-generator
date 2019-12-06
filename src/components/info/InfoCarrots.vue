@@ -1,12 +1,11 @@
 <template>
   <FormGroup
-    label="What do you do at your occupation?"
-    label-for="info-occupation"
+    label="How many carrots do you believe you could eat in one sitting?"
+    label-for="info-carrots"
   >
-    <TextInput id="info-occupation" v-model="occupation" @input="onInput" />
+    <TextInput id="info-carrots" v-model="carrots" @input="onInput" />
     <small class="form-help-text">
-      Condense the verb in your answer into a single “-er” noun. (e.g. if you
-      are a sheep farmer, your answer will be “Farmer.”)
+      If someone, like, forced you to eat as many carrots as possible?
     </small>
   </FormGroup>
 </template>
@@ -22,12 +21,12 @@ export default {
   },
   data() {
     return {
-      occupation: '',
+      carrots: '',
     };
   },
   methods: {
     onInput() {
-      this.$emit('change', this.occupation);
+      this.$emit('change', this.carrots);
     },
   },
 };

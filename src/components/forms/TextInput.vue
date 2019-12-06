@@ -22,6 +22,10 @@ export default {
       type: String,
       default: 'text',
     },
+    value: {
+      type: String,
+      default: '',
+    },
   },
   methods: {
     onInput(e) {

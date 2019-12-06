@@ -1,12 +1,11 @@
 <template>
   <FormGroup
-    label="What do you do at your occupation?"
-    label-for="info-occupation"
+    label="What’s your most embarrassing childhood memory?"
+    label-for="info-embarrasing-memory"
   >
-    <TextInput id="info-occupation" v-model="occupation" @input="onInput" />
+    <TextInput id="info-embarrasing-memory" v-model="memory" @input="onInput" />
     <small class="form-help-text">
-      Condense the verb in your answer into a single “-er” noun. (e.g. if you
-      are a sheep farmer, your answer will be “Farmer.”)
+      Condense this story into two words.
     </small>
   </FormGroup>
 </template>
@@ -22,12 +21,12 @@ export default {
   },
   data() {
     return {
-      occupation: '',
+      memory: '',
     };
   },
   methods: {
     onInput() {
-      this.$emit('change', this.occupation);
+      this.$emit('change', this.memory);
     },
   },
 };

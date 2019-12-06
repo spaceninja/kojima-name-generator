@@ -17,6 +17,10 @@
 
     <InfoOccupation @change="setLastName" />
 
+    <InfoMatterState @change="setMatter" />
+
+    <InfoZodiacSign @change="setZodiac" />
+
     <button
       @click="$emit('name-change', { firstName: 'Fire', lastName: 'Trooper' })"
     >
@@ -27,10 +31,14 @@
 
 <script>
 import InfoOccupation from '../info/InfoOccupation.vue';
+import InfoMatterState from '../info/InfoMatterState.vue';
+import InfoZodiacSign from '../info/InfoZodiacSign.vue';
 
 export default {
   components: {
     InfoOccupation,
+    InfoMatterState,
+    InfoZodiacSign,
   },
   data() {
     return {
@@ -57,6 +65,12 @@ export default {
     },
     setName(name) {
       this.$emit('name-change', name);
+    },
+    setMatter(state) {
+      console.log('MATTER STATE', state);
+    },
+    setZodiac(sign) {
+      console.log('ZODIAC SIGN', sign);
     },
   },
 };
