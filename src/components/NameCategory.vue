@@ -64,11 +64,11 @@ export default {
     },
     hasTheName() {
       // return this.nameCategory >= 11 && this.nameCategory <= 13 ? true : false;
-      return true;
+      return false;
     },
     hasCoolName() {
       // return this.nameCategory >= 14 && this.nameCategory <= 17 ? true : false;
-      return false;
+      return true;
     },
     hasViolentName() {
       // return this.nameCategory >= 18 && this.nameCategory <= 19 ? true : false;

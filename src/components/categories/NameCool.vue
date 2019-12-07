@@ -13,14 +13,74 @@
       <li>Skull Face (MGSV)</li>
       <li>Dr. Strangelove (MGSV)</li>
     </ul>
-    <button
-      @click="$emit('name-change', { firstName: 'Skull', lastName: 'Face' })"
-    >
-      Set Name
-    </button>
+
+    <!-- 3.21 - InfoMadsMikkelsen -->
+    <InfoMadsMikkelsen @change="setFirstName" />
+
+    <!--
+      1. 3.17 - InfoFaveKubrick
+      2. 3.18 - InfoFaveJoyDivision
+      3. 3.19 - InfoNPRScience
+      4. 2.06 - InfoSkill
+      5. 2.08 - InfoIntangibleFear
+      6. 2.13 - InfoNameHomonym
+    -->
+    <InfoFaveKubrick v-if="lastNameCategory === 1" @change="setLastName" />
+    <InfoFaveJoyDivision v-if="lastNameCategory === 2" @change="setLastName" />
+    <InfoNPRScience v-if="lastNameCategory === 3" @change="setLastName" />
+    <InfoSkill v-if="lastNameCategory === 4" @change="setLastName" />
+    <InfoIntangibleFear v-if="lastNameCategory === 5" @change="setLastName" />
+    <InfoNameHomonym v-if="lastNameCategory === 6" @change="setLastName" />
   </div>
 </template>
 
 <script>
-export default {};
+import getRandomInt from '../../scripts/get-random-integer';
+import InfoMadsMikkelsen from '../info/InfoMadsMikkelsen.vue';
+import InfoFaveKubrick from '../info/InfoFaveKubrick.vue';
+import InfoFaveJoyDivision from '../info/InfoFaveJoyDivision.vue';
+import InfoNPRScience from '../info/InfoNPRScience.vue';
+import InfoSkill from '../info/InfoSkill.vue';
+import InfoIntangibleFear from '../info/InfoIntangibleFear.vue';
+import InfoNameHomonym from '../info/InfoNameHomonym.vue';
+
+export default {
+  components: {
+    InfoMadsMikkelsen,
+    InfoFaveKubrick,
+    InfoFaveJoyDivision,
+    InfoNPRScience,
+    InfoSkill,
+    InfoIntangibleFear,
+    InfoNameHomonym,
+  },
+  data() {
+    return {
+      firstName: '',
+      lastName: '',
+      lastNameCategory: getRandomInt(1, 6),
+    };
+  },
+  computed: {
+    fullName() {
+      return {
+        firstName: this.firstName,
+        lastName: this.lastName,
+      };
+    },
+  },
+  methods: {
+    setFirstName(firstName) {
+      this.firstName = firstName;
+      this.setName(this.fullName);
+    },
+    setLastName(lastName) {
+      this.lastName = lastName;
+      this.setName(this.fullName);
+    },
+    setName(name) {
+      this.$emit('name-change', name);
+    },
+  },
+};
 </script>
