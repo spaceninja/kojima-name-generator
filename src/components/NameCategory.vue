@@ -60,11 +60,11 @@ export default {
     },
     hasHornyName() {
       // return this.nameCategory >= 7 && this.nameCategory <= 10 ? true : false;
-      return true;
+      return false;
     },
     hasTheName() {
       // return this.nameCategory >= 11 && this.nameCategory <= 13 ? true : false;
-      return false;
+      return true;
     },
     hasCoolName() {
       // return this.nameCategory >= 14 && this.nameCategory <= 17 ? true : false;

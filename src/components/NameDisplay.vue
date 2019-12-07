@@ -26,19 +26,19 @@ export default {
   computed: {
     fullName() {
       // special case for Hideo Kojima
-      if (this.activeConditions.isKojima) {
-        return 'Hideo Kojima';
-      }
+      if (this.activeConditions.isKojima) return 'Hideo Kojima';
 
       // set to null if both are missing so we can hide the results block
-      if (!this.firstName && !this.lastName) {
-        return null;
-      }
+      if (!this.firstName && !this.lastName) return null;
 
       // force clones to have the last name "Snake"
-      if (this.activeConditions.isClone) {
-        return `${this.firstName} Snake`;
-      }
+      if (this.activeConditions.isClone) return `${this.firstName} Snake`;
+
+      // if no first name, return just the last (to avoid spaces)
+      if (!this.firstName) return this.lastName;
+
+      // if no last name, return just the first (to avoid spaces)
+      if (!this.lastName) return this.firstName;
 
       // okay, we have a name!
       return `${this.firstName} ${this.lastName}`;
