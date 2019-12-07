@@ -1,6 +1,17 @@
 <template functional>
-  <div class="form-group">
-    <label :for="props.labelFor">{{ props.label }}</label>
+  <div v-if="props.type === 'checkbox'" class="form-group form-check">
+    <slot />
+    <label class="form-check-label" :for="props.labelFor">
+      {{ props.label }}
+    </label>
+  </div>
+  <div v-else-if="props.type === 'actions'" class="form-group form-actions">
+    <slot />
+  </div>
+  <div v-else class="form-group">
+    <label class="form-label" :for="props.labelFor">
+      {{ props.label }}
+    </label>
     <slot />
   </div>
 </template>
@@ -15,6 +26,10 @@ export default {
     label: {
       type: String,
       required: true,
+    },
+    type: {
+      type: String,
+      default: null,
     },
   },
 };

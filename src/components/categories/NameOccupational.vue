@@ -15,6 +15,7 @@
       <li>Sam Porter Bridges (Death Stranding)</li>
     </ul>
 
+    <!-- 2.2 - InfoOccupation -->
     <InfoOccupation @change="setLastName" />
 
     <!--

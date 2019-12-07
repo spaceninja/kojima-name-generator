@@ -7,6 +7,7 @@
       id="info-matter-state"
       v-model="matterState"
       :options="options"
+      :simple="true"
       @change="onChange"
     />
   </FormGroup>

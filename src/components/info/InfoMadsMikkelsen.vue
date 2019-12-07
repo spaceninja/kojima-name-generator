@@ -3,7 +3,11 @@
     label="What is something you’d enjoy watching Mads Mikkelsen do?"
     label-for="info-mads-activity"
   >
-    <TextInput id="info-madsActivity" v-model="madsActivity" @input="onInput" />
+    <TextInput
+      id="info-mads-activity"
+      v-model="madsActivity"
+      @input="onInput"
+    />
     <small class="form-help-text">
       Please condense into one word.
     </small>

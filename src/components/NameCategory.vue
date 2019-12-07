@@ -56,11 +56,11 @@ export default {
     },
     hasOccupationalName() {
       // return this.nameCategory >= 2 && this.nameCategory <= 6 ? true : false;
-      return true;
+      return false;
     },
     hasHornyName() {
       // return this.nameCategory >= 7 && this.nameCategory <= 10 ? true : false;
-      return false;
+      return true;
     },
     hasTheName() {
       // return this.nameCategory >= 11 && this.nameCategory <= 13 ? true : false;
