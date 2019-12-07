@@ -20,7 +20,11 @@
     />
     <NameCool v-if="hasCoolName" @name-change="setName" />
     <NameViolent v-if="hasViolentName" @name-change="setName" />
-    <NameLacksSubtext v-if="hasLacksSubtextName" @name-change="setName" />
+    <NameLacksSubtext
+      v-if="hasLacksSubtextName"
+      @name-change="setName"
+      @conditions-change="setConditions"
+    />
   </section>
 </template>
 
@@ -72,11 +76,11 @@ export default {
     },
     hasViolentName() {
       // return this.nameCategory >= 18 && this.nameCategory <= 19 ? true : false;
-      return true;
+      return false;
     },
     hasLacksSubtextName() {
       // return this.nameCategory === 20 ? true : false;
-      return false;
+      return true;
     },
   },
   methods: {

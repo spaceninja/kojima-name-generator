@@ -10,17 +10,54 @@
     <h5>Examples:</h5>
     <ul>
       <li>The Boss (MGS3)</li>
-      <li>Para-Medic (MGS3)</li>
+      <li>Deadman (Death Stranding)</li>
       <li>Fatman (MGS2)</li>
     </ul>
-    <button
-      @click="$emit('name-change', { firstName: 'Para', lastName: 'Medic' })"
-    >
-      Set Name
-    </button>
+
+    <InfoRecentActivity @change="setfirstName" />
   </div>
 </template>
 
 <script>
-export default {};
+import InfoRecentActivity from '../info/InfoRecentActivity.vue';
+
+export default {
+  components: {
+    InfoRecentActivity,
+  },
+  data() {
+    return {
+      firstName: '',
+    };
+  },
+  computed: {
+    /**
+     * Full Name = First Name, No Last Name
+     *
+     * The worksheet says the first name should be "The" and the value the user
+     * fills in should be the last name. However, to avoid duplicate "The" if
+     * the user also has the `isThe` condition, we instead just set that
+     * condition directly. As a result we have to leave one name blank, and we
+     * don't want to leave first name blank, because if the `isClone` condition
+     * is true, it steals the last name slot. So setting the user's input as
+     * the first name gives us the most flexibility.
+     */
+    fullName() {
+      return {
+        firstName: this.firstName,
+        lastName: '',
+      };
+    },
+  },
+  methods: {
+    setfirstName(firstName) {
+      this.firstName = firstName;
+      this.setName(this.fullName);
+    },
+    setName(name) {
+      this.$emit('conditions-change', { isMan: true });
+      this.$emit('name-change', name);
+    },
+  },
+};
 </script>

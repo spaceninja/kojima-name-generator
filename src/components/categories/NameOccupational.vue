@@ -10,7 +10,7 @@
     </blockquote>
     <h5>Examples:</h5>
     <ul>
-      <li>Deadman (Death Stranding)</li>
+      <li>Para-Medic (MGS3)</li>
       <li>Fire Trooper (Metal Gear)</li>
       <li>Sam Porter Bridges (Death Stranding)</li>
     </ul>
