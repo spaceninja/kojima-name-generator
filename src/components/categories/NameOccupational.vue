@@ -17,33 +17,43 @@
 
     <InfoOccupation @change="setLastName" />
 
-    <InfoMatterState @change="setMatter" />
-
-    <InfoZodiacSign @change="setZodiac" />
-
-    <button
-      @click="$emit('name-change', { firstName: 'Fire', lastName: 'Trooper' })"
-    >
-      Set Name
-    </button>
+    <!--
+      1. 2.15 - InfoPersonality
+      2. 2.06 - InfoSkill
+      3. 2.13 - InfoNameHomonym
+      4. 3.16 - InfoFaveKurtRussell
+    -->
+    <InfoPersonality v-if="firstNameCategory === 1" @change="setFirstName" />
+    <InfoSkill v-if="firstNameCategory === 2" @change="setFirstName" />
+    <InfoNameHomonym v-if="firstNameCategory === 3" @change="setFirstName" />
+    <InfoFaveKurtRussell
+      v-if="firstNameCategory === 4"
+      @change="setFirstName"
+    />
   </div>
 </template>
 
 <script>
+import getRandomInt from '../../scripts/get-random-integer';
 import InfoOccupation from '../info/InfoOccupation.vue';
-import InfoMatterState from '../info/InfoMatterState.vue';
-import InfoZodiacSign from '../info/InfoZodiacSign.vue';
+import InfoPersonality from '../info/InfoPersonality.vue';
+import InfoSkill from '../info/InfoSkill.vue';
+import InfoNameHomonym from '../info/InfoNameHomonym.vue';
+import InfoFaveKurtRussell from '../info/InfoFaveKurtRussell.vue';
 
 export default {
   components: {
     InfoOccupation,
-    InfoMatterState,
-    InfoZodiacSign,
+    InfoPersonality,
+    InfoSkill,
+    InfoNameHomonym,
+    InfoFaveKurtRussell,
   },
   data() {
     return {
       firstName: '',
       lastName: '',
+      firstNameCategory: getRandomInt(1, 4),
     };
   },
   computed: {
@@ -65,12 +75,6 @@ export default {
     },
     setName(name) {
       this.$emit('name-change', name);
-    },
-    setMatter(state) {
-      console.log('MATTER STATE', state);
-    },
-    setZodiac(sign) {
-      console.log('ZODIAC SIGN', sign);
     },
   },
 };

@@ -51,25 +51,32 @@ export default {
   },
   computed: {
     hasNormalName() {
-      return this.nameCategory === 1 ? true : false;
+      // return this.nameCategory === 1 ? true : false;
+      return false;
     },
     hasOccupationalName() {
-      return this.nameCategory >= 2 && this.nameCategory <= 6 ? true : false;
+      // return this.nameCategory >= 2 && this.nameCategory <= 6 ? true : false;
+      return true;
     },
     hasHornyName() {
-      return this.nameCategory >= 7 && this.nameCategory <= 10 ? true : false;
+      // return this.nameCategory >= 7 && this.nameCategory <= 10 ? true : false;
+      return false;
     },
     hasTheName() {
-      return this.nameCategory >= 11 && this.nameCategory <= 13 ? true : false;
+      // return this.nameCategory >= 11 && this.nameCategory <= 13 ? true : false;
+      return false;
     },
     hasCoolName() {
-      return this.nameCategory >= 14 && this.nameCategory <= 17 ? true : false;
+      // return this.nameCategory >= 14 && this.nameCategory <= 17 ? true : false;
+      return false;
     },
     hasViolentName() {
-      return this.nameCategory >= 18 && this.nameCategory <= 19 ? true : false;
+      // return this.nameCategory >= 18 && this.nameCategory <= 19 ? true : false;
+      return false;
     },
     hasLacksSubtextName() {
-      return this.nameCategory === 20 ? true : false;
+      // return this.nameCategory === 20 ? true : false;
+      return false;
     },
   },
   methods: {

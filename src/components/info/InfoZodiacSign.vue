@@ -4,6 +4,7 @@
       id="info-zodiac-sign"
       v-model="zodiacSign"
       :options="options"
+      :simple="true"
       @change="onChange"
     />
   </FormGroup>

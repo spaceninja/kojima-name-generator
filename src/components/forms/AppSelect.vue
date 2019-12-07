@@ -2,9 +2,20 @@
   <div>
     <select v-model="selected" @change="onChange">
       <option disabled value="">Please select one</option>
-      <option v-for="option in options" :key="option" :value="option">
-        {{ option }}
-      </option>
+      <template v-if="simple">
+        <option v-for="option in options" :key="option" :value="option">
+          {{ option }}
+        </option>
+      </template>
+      <template v-else>
+        <option
+          v-for="option in options"
+          :key="option.value"
+          :value="option.value"
+        >
+          {{ option.text }}
+        </option>
+      </template>
     </select>
   </div>
 </template>
@@ -19,6 +30,10 @@ export default {
     options: {
       type: Array,
       required: true,
+    },
+    simple: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
