@@ -68,11 +68,11 @@ export default {
     },
     hasCoolName() {
       // return this.nameCategory >= 14 && this.nameCategory <= 17 ? true : false;
-      return true;
+      return false;
     },
     hasViolentName() {
       // return this.nameCategory >= 18 && this.nameCategory <= 19 ? true : false;
-      return false;
+      return true;
     },
     hasLacksSubtextName() {
       // return this.nameCategory === 20 ? true : false;
