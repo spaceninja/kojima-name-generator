@@ -47,10 +47,11 @@
           You have the <strong>“Your Current Condition” Condition</strong>
         </h4>
         <p>
-          You are how you currently are. Add the condition your body is current
-          in to the beginning of your name.
+          You are how you currently are. Add the condition your body is
+          currently in to the beginning of your name.
         </p>
-        <p><small>(Currently hard-wired to return “Bloated”.)</small></p>
+
+        <InfoBodyCondition @change="setCondition" />
       </div>
 
       <div v-if="isClone">
@@ -73,14 +74,19 @@
 
 <script>
 import getRandomInt from '../scripts/get-random-integer';
+import InfoBodyCondition from './info/InfoBodyCondition.vue';
 
 export default {
+  components: {
+    InfoBodyCondition,
+  },
   data() {
     return {
       manRoll: getRandomInt(1, 4),
       conditionRoll: getRandomInt(1, 8),
       cloneRoll: getRandomInt(1, 12),
       kojimaRoll: getRandomInt(1, 100),
+      currentCondition: '',
     };
   },
   computed: {
@@ -108,15 +114,23 @@ export default {
       if (this.isMan) activeConditions.isMan = true;
       if (this.isBig) activeConditions.isBig = true;
       if (this.isOld) activeConditions.isOld = true;
-      if (this.isCurrentCondition) activeConditions.isCurrentCondition = true;
       if (this.isClone) activeConditions.isClone = true;
       if (this.isKojima) activeConditions.isKojima = true;
+      if (this.isCurrentCondition) {
+        activeConditions.currentCondition = this.currentCondition;
+        activeConditions.isCurrentCondition = true;
+      }
 
       // return the active conditions to the main app
       this.$emit('conditions-change', activeConditions);
 
       // set to null if no conditions are active, so we can hide the descriptions
       return Object.keys(activeConditions).length > 0 ? activeConditions : null;
+    },
+  },
+  methods: {
+    setCondition(condition) {
+      this.currentCondition = condition;
     },
   },
 };

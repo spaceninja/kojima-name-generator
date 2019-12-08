@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     onChange() {
-      this.$emit('change', this.lickable ? 'Lickable' : '');
+      this.$emit('change', this.lickable ? '“Lickable”' : '');
     },
   },
 };

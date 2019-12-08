@@ -40,7 +40,7 @@ export default {
       this.lastName = name.lastName;
     },
     setConditions(conditions) {
-      this.activeConditions = { ...conditions, ...this.activeConditions };
+      this.activeConditions = { ...this.activeConditions, ...conditions };
     },
   },
 };

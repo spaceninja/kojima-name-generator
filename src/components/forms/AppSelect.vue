@@ -8,8 +8,8 @@
     </template>
     <template v-else>
       <option
-        v-for="option in options"
-        :key="option.value"
+        v-for="(option, index) in options"
+        :key="`${option.value}-${index}`"
         :value="option.value"
       >
         {{ option.text }}

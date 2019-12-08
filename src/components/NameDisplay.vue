@@ -54,7 +54,8 @@ export default {
       if (this.activeConditions.isThe) prefix += 'The ';
       if (this.activeConditions.isBig) prefix += 'Big ';
       if (this.activeConditions.isOld) prefix += 'Old ';
-      if (this.activeConditions.isCurrentCondition) prefix += 'Bloated ';
+      if (this.activeConditions.isCurrentCondition)
+        prefix += `${this.activeConditions.currentCondition} `;
       return prefix;
     },
     displayName() {
