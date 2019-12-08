@@ -10,7 +10,7 @@
       @change="onChange"
     />
     <small class="form-help-text">
-      (NOTE: must be played by Kurt Russell)
+      Must be played by Kurt Russell.
     </small>
   </FormGroup>
 </template>

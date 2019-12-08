@@ -9,7 +9,7 @@
       @input="onInput"
     />
     <small class="form-help-text">
-      Please condense into one word.
+      Condense into one word.
     </small>
   </FormGroup>
 </template>

@@ -5,7 +5,8 @@
   >
     <TextInput id="info-name-homonym" v-model="nameHomonym" @input="onInput" />
     <small class="form-help-text">
-      (e.g. Brian -> Brain)
+      Emphasis on “kind of.” e.g. Brian: Brain; Travis: Starfish; Scott:
+      Scorpion;
     </small>
   </FormGroup>
 </template>

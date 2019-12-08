@@ -8,9 +8,6 @@
       v-model="recentActivity"
       @input="onInput"
     />
-    <small class="form-help-text">
-      (e.g. EXAMPLE GOES HERE)
-    </small>
   </FormGroup>
 </template>
 

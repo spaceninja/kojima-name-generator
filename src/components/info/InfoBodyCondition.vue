@@ -9,7 +9,7 @@
       @input="onInput"
     />
     <small class="form-help-text">
-      (single word answer)
+      Single word answer, e.g. “Bloated”.
     </small>
   </FormGroup>
 </template>

@@ -9,7 +9,7 @@
       @input="onInput"
     />
     <small class="form-help-text">
-      (Singular. e.g., “Railgun”)
+      Singular. e.g., “Railgun”.
     </small>
   </FormGroup>
 </template>

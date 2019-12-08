@@ -9,7 +9,7 @@
       @input="onInput"
     />
     <small class="form-help-text">
-      (e.g. death, loneliness, fear itself)
+      e.g. Death, Loneliness, Fear Itself.
     </small>
   </FormGroup>
 </template>
