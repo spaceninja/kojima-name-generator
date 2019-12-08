@@ -26,7 +26,11 @@ export default {
 @import './assets/css/reboot.css';
 
 body {
-  margin: 2rem;
+  margin: 1rem;
+
+  @media screen and (min-width: 480px) {
+    margin: 2rem;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -51,18 +55,39 @@ body {
   }
 }
 
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
 h1 {
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: 200;
+
+  @media screen and (min-width: 480px) {
+    font-size: 2em;
+  }
 }
 
 h2 {
-  font-size: 4em;
+  font-size: 2em;
   font-weight: 200;
-  margin: 0.5em 0;
 
   strong {
     font-weight: 800;
+  }
+
+  @media screen and (min-width: 375px) {
+    font-size: 2.5em;
+  }
+
+  @media screen and (min-width: 480px) {
+    font-size: 3em;
+  }
+
+  @media screen and (min-width: 640px) {
+    font-size: 4em;
   }
 }
 

@@ -2,7 +2,7 @@
   <section v-if="fullName">
     <hr />
     <h2>
-      Your Name is <strong>{{ displayName }}</strong>
+      <span>Your Name is</span> <strong>{{ displayName }}</strong>
     </h2>
   </section>
 </template>
@@ -68,3 +68,21 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+section {
+  text-align: center;
+}
+h2 {
+  line-height: 1;
+  margin: 0.125em 0 0.5em;
+}
+span {
+  font-size: 50%;
+  text-transform: uppercase;
+}
+strong {
+  display: block;
+  line-height: 1.2;
+}
+</style>
