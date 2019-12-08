@@ -131,6 +131,6 @@ label {
 .form-help-text {
   display: block;
   margin-top: 0.25rem;
-  opacity: 75%;
+  opacity: 0.75;
 }
 </style>
