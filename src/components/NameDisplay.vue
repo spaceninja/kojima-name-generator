@@ -76,6 +76,7 @@ section {
 h2 {
   line-height: 1;
   margin: 0.125em 0 0.5em;
+  text-transform: capitalize;
 }
 span {
   font-size: 50%;
