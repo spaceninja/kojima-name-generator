@@ -1,8 +1,13 @@
 <template>
-  <section v-if="fullName">
-    <hr />
+  <section>
     <h2>
-      <span>Your Name is</span> <strong>{{ displayName }}</strong>
+      <span class="introduction">
+        <span class="hello">Hello</span>
+        my name is
+      </span>
+      <strong>
+        {{ displayName }}
+      </strong>
     </h2>
   </section>
 </template>
@@ -70,20 +75,38 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+
 section {
   text-align: center;
 }
 h2 {
+  border: 1rem solid red;
+  border-radius: 1rem;
+  border-width: 1rem 0.25rem;
   line-height: 1;
-  margin: 0.125em 0 0.5em;
-  text-transform: capitalize;
+  margin: 0.5em 0 0.5em;
 }
 span {
+  display: block;
+}
+.introduction {
+  background: red;
+  color: white;
   font-size: 50%;
-  text-transform: uppercase;
+  padding-bottom: 1rem;
+}
+.hello {
+  font-size: 200%;
+  font-weight: 500;
 }
 strong {
   display: block;
+  font-family: 'Permanent Marker', Chalkboard, ChalkboardSE-Regular,
+    'Comic Sans', 'Comic Sans MS', sans-serif;
+  font-weight: normal;
   line-height: 1.2;
+  padding: 1em 0.5em;
+  text-transform: capitalize;
 }
 </style>

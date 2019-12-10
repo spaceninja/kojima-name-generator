@@ -1,6 +1,5 @@
 <template>
   <section v-if="conditions">
-    <hr />
     <header v-if="!isKojima">
       <h3>Your Name Conditions:</h3>
       <blockquote>

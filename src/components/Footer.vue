@@ -1,6 +1,5 @@
 <template functional>
   <footer key="footer">
-    <hr />
     <p>
       Based on the
       <a

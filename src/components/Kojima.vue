@@ -1,18 +1,37 @@
 <template>
   <main>
-    <NameDisplay
-      :active-conditions="activeConditions"
-      :first-name="firstName"
-      :last-name="lastName"
-    />
+    <template v-if="isGenerated">
+      <NameDisplay
+        :active-conditions="activeConditions"
+        :first-name="firstName"
+        :last-name="lastName"
+      />
 
-    <NameCategory
-      v-if="!activeConditions.isKojima"
-      @name-change="setName"
-      @conditions-change="setConditions"
-    />
+      <FormGroup type="actions">
+        <button class="btn btn-primary" @click="resetName">
+          That's Not My Name
+        </button>
+        <p class="help-text">
+          Kojima often creates characters that have many alternate names.
+        </p>
+      </FormGroup>
+    </template>
 
-    <NameConditions @conditions-change="setConditions" />
+    <form v-else @submit.prevent="generateName">
+      <NameCategory
+        v-if="!activeConditions.isKojima"
+        @name-change="setName"
+        @conditions-change="setConditions"
+      />
+
+      <NameConditions @conditions-change="setConditions" />
+
+      <FormGroup type="actions">
+        <button class="btn btn-secondary">
+          Generate Your Kojima Name
+        </button>
+      </FormGroup>
+    </form>
   </main>
 </template>
 
@@ -20,18 +39,21 @@
 import NameDisplay from './NameDisplay.vue';
 import NameCategory from './NameCategory.vue';
 import NameConditions from './NameConditions.vue';
+import FormGroup from './forms/FormGroup.vue';
 
 export default {
   components: {
     NameDisplay,
     NameCategory,
     NameConditions,
+    FormGroup,
   },
   data() {
     return {
       activeConditions: {},
       firstName: '',
       lastName: '',
+      isGenerated: false,
     };
   },
   methods: {
@@ -41,6 +63,13 @@ export default {
     },
     setConditions(conditions) {
       this.activeConditions = { ...this.activeConditions, ...conditions };
+    },
+    generateName() {
+      this.isGenerated = true;
+    },
+    resetName() {
+      // TODO: need to reset all the conditions too
+      this.isGenerated = false;
     },
   },
 };

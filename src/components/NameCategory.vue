@@ -1,14 +1,15 @@
 <template>
   <section>
-    <hr />
-    <h3>Your Name Category:</h3>
-    <blockquote>
-      <p>
-        Kojima names fall into a finite number of categories. This section will
-        determine the category in which your name belongs. (Reload the page for
-        a different category.)
-      </p>
-    </blockquote>
+    <header>
+      <h3>Your Name Category:</h3>
+      <blockquote>
+        <p>
+          Kojima names fall into a finite number of categories. This section
+          will determine the category in which your name belongs. (Reload the
+          page for a different category.)
+        </p>
+      </blockquote>
+    </header>
 
     <NameNormal v-if="hasNormalName" @name-change="setName" />
     <NameOccupational v-if="hasOccupationalName" @name-change="setName" />

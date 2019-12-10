@@ -3,6 +3,7 @@
     v-if="type !== 'textarea'"
     class="form-control"
     :type="type"
+    required
     :value="value"
     @input="onInput"
   />
