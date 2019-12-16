@@ -3,11 +3,7 @@
     label="What is something you’d enjoy watching Mads Mikkelsen do?"
     label-for="info-mads-activity"
   >
-    <TextInput
-      id="info-mads-activity"
-      v-model="madsActivity"
-      @input="onInput"
-    />
+    <AppInput id="info-mads-activity" v-model="madsActivity" @input="onInput" />
     <small class="form-help-text">
       Condense into one word.
     </small>
@@ -16,12 +12,12 @@
 
 <script>
 import FormGroup from '../forms/FormGroup.vue';
-import TextInput from '../forms/TextInput.vue';
+import AppInput from '../forms/AppInput.vue';
 
 export default {
   components: {
     FormGroup,
-    TextInput,
+    AppInput,
   },
   data() {
     return {

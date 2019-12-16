@@ -3,7 +3,7 @@
     label="What is a word your name kind of sounds like?"
     label-for="info-name-homonym"
   >
-    <TextInput id="info-name-homonym" v-model="nameHomonym" @input="onInput" />
+    <AppInput id="info-name-homonym" v-model="nameHomonym" @input="onInput" />
     <small class="form-help-text">
       Emphasis on “kind of.” e.g. Brian: Brain; Travis: Starfish; Scott:
       Scorpion;
@@ -13,12 +13,12 @@
 
 <script>
 import FormGroup from '../forms/FormGroup.vue';
-import TextInput from '../forms/TextInput.vue';
+import AppInput from '../forms/AppInput.vue';
 
 export default {
   components: {
     FormGroup,
-    TextInput,
+    AppInput,
   },
   data() {
     return {

@@ -3,7 +3,7 @@
     label="What is your greatest intangible fear?"
     label-for="info-intangible-fear"
   >
-    <TextInput
+    <AppInput
       id="info-intangible-fear"
       v-model="intangibleFear"
       @input="onInput"
@@ -16,12 +16,12 @@
 
 <script>
 import FormGroup from '../forms/FormGroup.vue';
-import TextInput from '../forms/TextInput.vue';
+import AppInput from '../forms/AppInput.vue';
 
 export default {
   components: {
     FormGroup,
-    TextInput,
+    AppInput,
   },
   data() {
     return {

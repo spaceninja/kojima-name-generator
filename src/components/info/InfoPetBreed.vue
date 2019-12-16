@@ -3,7 +3,7 @@
     label="What was your first pet’s specific species/breed?"
     label-for="info-pet-breed"
   >
-    <TextInput id="info-pet-breed" v-model="petBreed" @input="onInput" />
+    <AppInput id="info-pet-breed" v-model="petBreed" @input="onInput" />
     <small class="form-help-text">
       If you never had a pet, please answer with an animal you wish you owned.
     </small>
@@ -12,12 +12,12 @@
 
 <script>
 import FormGroup from '../forms/FormGroup.vue';
-import TextInput from '../forms/TextInput.vue';
+import AppInput from '../forms/AppInput.vue';
 
 export default {
   components: {
     FormGroup,
-    TextInput,
+    AppInput,
   },
   data() {
     return {

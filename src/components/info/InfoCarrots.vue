@@ -3,7 +3,7 @@
     label="How many carrots do you believe you could eat in one sitting?"
     label-for="info-carrots"
   >
-    <TextInput id="info-carrots" v-model="carrots" @input="onInput" />
+    <AppInput id="info-carrots" v-model="carrots" @input="onInput" />
     <small class="form-help-text">
       If someone, like, forced you to eat as many carrots as possible?
     </small>
@@ -12,12 +12,12 @@
 
 <script>
 import FormGroup from '../forms/FormGroup.vue';
-import TextInput from '../forms/TextInput.vue';
+import AppInput from '../forms/AppInput.vue';
 
 export default {
   components: {
     FormGroup,
-    TextInput,
+    AppInput,
   },
   data() {
     return {

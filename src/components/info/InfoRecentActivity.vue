@@ -3,7 +3,7 @@
     label="What is the last thing you did before starting this worksheet?"
     label-for="info-recent-activity"
   >
-    <TextInput
+    <AppInput
       id="info-recent-activity"
       v-model="recentActivity"
       @input="onInput"
@@ -13,12 +13,12 @@
 
 <script>
 import FormGroup from '../forms/FormGroup.vue';
-import TextInput from '../forms/TextInput.vue';
+import AppInput from '../forms/AppInput.vue';
 
 export default {
   components: {
     FormGroup,
-    TextInput,
+    AppInput,
   },
   data() {
     return {

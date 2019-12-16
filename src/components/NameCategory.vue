@@ -11,17 +11,17 @@
       </blockquote>
     </header>
 
-    <NameNormal v-if="hasNormalName" @name-change="setName" />
-    <NameOccupational v-if="hasOccupationalName" @name-change="setName" />
-    <NameHorny v-if="hasHornyName" @name-change="setName" />
-    <NameThe
+    <CategoryNormal v-if="hasNormalName" @name-change="setName" />
+    <CategoryOccupational v-if="hasOccupationalName" @name-change="setName" />
+    <CategoryHorny v-if="hasHornyName" @name-change="setName" />
+    <CategoryThe
       v-if="hasTheName"
       @name-change="setName"
       @conditions-change="setConditions"
     />
-    <NameCool v-if="hasCoolName" @name-change="setName" />
-    <NameViolent v-if="hasViolentName" @name-change="setName" />
-    <NameLacksSubtext
+    <CategoryCool v-if="hasCoolName" @name-change="setName" />
+    <CategoryViolent v-if="hasViolentName" @name-change="setName" />
+    <CategoryLacksSubtext
       v-if="hasLacksSubtextName"
       @name-change="setName"
       @conditions-change="setConditions"
@@ -31,23 +31,23 @@
 
 <script>
 import getRandomInt from '../scripts/get-random-integer';
-import NameNormal from './categories/NameNormal.vue';
-import NameOccupational from './categories/NameOccupational.vue';
-import NameHorny from './categories/NameHorny.vue';
-import NameThe from './categories/NameThe.vue';
-import NameCool from './categories/NameCool.vue';
-import NameViolent from './categories/NameViolent.vue';
-import NameLacksSubtext from './categories/NameLacksSubtext.vue';
+import CategoryNormal from './categories/CategoryNormal.vue';
+import CategoryOccupational from './categories/CategoryOccupational.vue';
+import CategoryHorny from './categories/CategoryHorny.vue';
+import CategoryThe from './categories/CategoryThe.vue';
+import CategoryCool from './categories/CategoryCool.vue';
+import CategoryViolent from './categories/CategoryViolent.vue';
+import CategoryLacksSubtext from './categories/CategoryLacksSubtext.vue';
 
 export default {
   components: {
-    NameNormal,
-    NameOccupational,
-    NameHorny,
-    NameThe,
-    NameCool,
-    NameViolent,
-    NameLacksSubtext,
+    CategoryNormal,
+    CategoryOccupational,
+    CategoryHorny,
+    CategoryThe,
+    CategoryCool,
+    CategoryViolent,
+    CategoryLacksSubtext,
   },
   data() {
     return {

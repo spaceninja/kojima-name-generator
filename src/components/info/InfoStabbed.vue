@@ -3,18 +3,18 @@
     label="What is the object you’d least like to be stabbed by?"
     label-for="info-stabbed"
   >
-    <TextInput id="info-stabbed" v-model="stabbed" @input="onInput" />
+    <AppInput id="info-stabbed" v-model="stabbed" @input="onInput" />
   </FormGroup>
 </template>
 
 <script>
 import FormGroup from '../forms/FormGroup.vue';
-import TextInput from '../forms/TextInput.vue';
+import AppInput from '../forms/AppInput.vue';
 
 export default {
   components: {
     FormGroup,
-    TextInput,
+    AppInput,
   },
   data() {
     return {

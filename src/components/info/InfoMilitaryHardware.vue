@@ -3,7 +3,7 @@
     label="What is a piece of military hardware you think looks cool even though war is bad?"
     label-for="info-military-hardware"
   >
-    <TextInput
+    <AppInput
       id="info-military-hardware"
       v-model="militaryHardware"
       @input="onInput"
@@ -16,12 +16,12 @@
 
 <script>
 import FormGroup from '../forms/FormGroup.vue';
-import TextInput from '../forms/TextInput.vue';
+import AppInput from '../forms/AppInput.vue';
 
 export default {
   components: {
     FormGroup,
-    TextInput,
+    AppInput,
   },
   data() {
     return {

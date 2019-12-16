@@ -3,7 +3,7 @@
     label="What condition is your body currently in?"
     label-for="info-body-condition"
   >
-    <TextInput
+    <AppInput
       id="info-body-condition"
       v-model="bodyCondition"
       @input="onInput"
@@ -16,12 +16,12 @@
 
 <script>
 import FormGroup from '../forms/FormGroup.vue';
-import TextInput from '../forms/TextInput.vue';
+import AppInput from '../forms/AppInput.vue';
 
 export default {
   components: {
     FormGroup,
-    TextInput,
+    AppInput,
   },
   data() {
     return {
