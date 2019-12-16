@@ -9,11 +9,20 @@
         {{ displayName }}
       </strong>
     </h2>
+    <p class="share">
+      <ShareButton service="twitter" :name="displayName" />
+      <ShareButton service="facebook" :name="displayName" />
+    </p>
   </section>
 </template>
 
 <script>
+import ShareButton from './forms/ShareButton.vue';
+
 export default {
+  components: {
+    ShareButton,
+  },
   props: {
     activeConditions: {
       type: Object,
