@@ -1,21 +1,21 @@
 <template>
   <div id="app">
     <AppHeader />
-    <Kojima />
+    <KojimaName />
     <AppFooter />
   </div>
 </template>
 
 <script>
 import AppHeader from './components/AppHeader.vue';
-import Kojima from './components/Kojima.vue';
+import KojimaName from './components/KojimaName.vue';
 import AppFooter from './components/AppFooter.vue';
 
 export default {
   name: 'App',
   components: {
     AppHeader,
-    Kojima,
+    KojimaName,
     AppFooter,
   },
 };
