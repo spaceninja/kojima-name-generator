@@ -11,7 +11,7 @@
 </template>
 
 <script>
-const appUrl = encodeURIComponent('https://kojima-name-generator.netlify.com/');
+const appUrl = encodeURIComponent('https://kojima.oscorp.net/');
 
 export default {
   props: {
