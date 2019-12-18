@@ -5,8 +5,10 @@
       <blockquote>
         <p>
           Kojima names fall into a finite number of categories. This section
-          will determine the category in which your name belongs. (Reload the
-          page for a different category.)
+          will determine the category in which your name belongs.
+        </p>
+        <p class="form-help-text">
+          (Reload the page for a different category.)
         </p>
       </blockquote>
     </header>
