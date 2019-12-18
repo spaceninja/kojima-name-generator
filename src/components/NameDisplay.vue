@@ -77,7 +77,18 @@ export default {
 
       let name = `${this.namePrefix}${this.fullName}${this.nameSuffix}`;
 
-      return name;
+      return this.titleCase(name);
+    },
+  },
+  methods: {
+    titleCase(string) {
+      return string
+        .toLowerCase()
+        .split(' ')
+        .map(function(word) {
+          return word.replace(word[0], word[0].toUpperCase());
+        })
+        .join(' ');
     },
   },
 };
@@ -121,7 +132,7 @@ strong {
   font-weight: normal;
   line-height: 1.2;
   padding: 1em 0.5em;
-  text-transform: capitalize;
+  text-transform: none;
 }
 
 @media (prefers-color-scheme: dark) {
