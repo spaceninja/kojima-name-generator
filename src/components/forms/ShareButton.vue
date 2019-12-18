@@ -26,7 +26,7 @@ export default {
   },
   computed: {
     message() {
-      return encodeURIComponent(`Hello, my Kojima name is "${this.name}"`);
+      return encodeURIComponent(`Hello, my #KojimaName is "${this.name}"`);
     },
     shareUrl() {
       if (this.service === 'twitter') {
