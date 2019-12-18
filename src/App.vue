@@ -153,7 +153,7 @@ blockquote {
 }
 
 .form-group {
-  margin: 1em 0;
+  margin: 1.5rem 0;
 }
 
 .form-actions {

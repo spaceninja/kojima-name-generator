@@ -69,7 +69,9 @@ export default {
       this.isGenerated = true;
     },
     resetName() {
-      // TODO: need to reset all the conditions too
+      this.activeConditions = {};
+      this.firstName = '';
+      this.lastName = '';
       this.isGenerated = false;
     },
   },
