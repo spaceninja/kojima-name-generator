@@ -8,11 +8,12 @@
       />
 
       <FormGroup type="actions">
-        <button class="btn btn-primary" @click="resetName">
-          That's Not My Name
+        <button class="btn btn-secondary" @click="resetName">
+          That’s Not My Name!
         </button>
-        <p class="help-text">
-          Kojima often creates characters that have many alternate names.
+        <p class="form-help-text">
+          It’s okay. Kojima often creates characters that have many alternate
+          names. Give it another try!
         </p>
       </FormGroup>
     </template>
@@ -27,7 +28,7 @@
       <NameConditions @conditions-change="setConditions" />
 
       <FormGroup type="actions">
-        <button class="btn btn-secondary">
+        <button class="btn btn-primary">
           Generate Your Kojima Name
         </button>
       </FormGroup>

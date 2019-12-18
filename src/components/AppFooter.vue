@@ -17,6 +17,32 @@
 </template>
 
 <script>
-// TODO: make functional
 export default {};
 </script>
+
+<style lang="scss" scoped>
+footer {
+  background: #eeeeee;
+  font-size: 0.8rem;
+  padding: 1rem;
+  text-align: center;
+
+  @media screen and (min-width: 480px) {
+    padding: 2rem;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+blockquote {
+  margin: 0.5em 0 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  footer {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+</style>

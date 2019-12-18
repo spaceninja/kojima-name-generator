@@ -1,35 +1,38 @@
 <template>
-  <div>
-    <h4>You have a <strong>Horny Name</strong></h4>
-    <blockquote>
-      <p>
-        Kojima’s characters and stories are irrevocably horny. Weirdly horny,
-        sure, but horny nonetheless.
-      </p>
-    </blockquote>
-    <h5>Examples:</h5>
-    <ul>
-      <li>Naked Snake (MGS3)</li>
-      <li>Liquid Snake (MGS)</li>
-      <li>Solid Snake (Metal Gear)</li>
-    </ul>
+  <section class="category">
+    <header class="category__header">
+      <h4>You have a Horny Name</h4>
+      <blockquote>
+        <p>
+          Kojima’s characters and stories are irrevocably horny. Weirdly horny,
+          sure, but horny nonetheless.
+        </p>
+      </blockquote>
+      <h5>Examples:</h5>
+      <ul>
+        <li>Naked Snake (MGS3)</li>
+        <li>Liquid Snake (MGS)</li>
+        <li>Solid Snake (Metal Gear)</li>
+      </ul>
+    </header>
+    <div class="category__content">
+      <!-- 2.3 - InfoPetBreed -->
+      <InfoPetBreed @change="setLastName" />
 
-    <!-- 2.3 - InfoPetBreed -->
-    <InfoPetBreed @change="setLastName" />
-
-    <!--
+      <!--
       1. 2.12 - InfoMatterState
       2. "Your first name is 'Naked'"
       3. 2.06 - InfoSkill
       4. 2.14 - InfoZodiacSign
     -->
-    <InfoMatterState v-if="firstNameCategory === 1" @change="setFirstName" />
-    <InfoNaked v-if="firstNameCategory === 2" @change="setFirstName" />
-    <InfoSkill v-if="firstNameCategory === 3" @change="setFirstName" />
-    <InfoZodiacSign v-if="firstNameCategory === 4" @change="setFirstName" />
+      <InfoMatterState v-if="firstNameCategory === 1" @change="setFirstName" />
+      <InfoNaked v-if="firstNameCategory === 2" @change="setFirstName" />
+      <InfoSkill v-if="firstNameCategory === 3" @change="setFirstName" />
+      <InfoZodiacSign v-if="firstNameCategory === 4" @change="setFirstName" />
 
-    <InfoLickable @change="setMiddleName" />
-  </div>
+      <InfoLickable @change="setMiddleName" />
+    </div>
+  </section>
 </template>
 
 <script>

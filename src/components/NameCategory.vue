@@ -1,6 +1,6 @@
 <template>
-  <section>
-    <header>
+  <section class="name-form">
+    <header class="name-form__header">
       <h3>Your Name Category:</h3>
       <blockquote>
         <p>
@@ -10,22 +10,23 @@
         </p>
       </blockquote>
     </header>
-
-    <CategoryNormal v-if="hasNormalName" @name-change="setName" />
-    <CategoryOccupational v-if="hasOccupationalName" @name-change="setName" />
-    <CategoryHorny v-if="hasHornyName" @name-change="setName" />
-    <CategoryThe
-      v-if="hasTheName"
-      @name-change="setName"
-      @conditions-change="setConditions"
-    />
-    <CategoryCool v-if="hasCoolName" @name-change="setName" />
-    <CategoryViolent v-if="hasViolentName" @name-change="setName" />
-    <CategoryLacksSubtext
-      v-if="hasLacksSubtextName"
-      @name-change="setName"
-      @conditions-change="setConditions"
-    />
+    <div class="name-form__content">
+      <CategoryNormal v-if="hasNormalName" @name-change="setName" />
+      <CategoryOccupational v-if="hasOccupationalName" @name-change="setName" />
+      <CategoryHorny v-if="hasHornyName" @name-change="setName" />
+      <CategoryThe
+        v-if="hasTheName"
+        @name-change="setName"
+        @conditions-change="setConditions"
+      />
+      <CategoryCool v-if="hasCoolName" @name-change="setName" />
+      <CategoryViolent v-if="hasViolentName" @name-change="setName" />
+      <CategoryLacksSubtext
+        v-if="hasLacksSubtextName"
+        @name-change="setName"
+        @conditions-change="setConditions"
+      />
+    </div>
   </section>
 </template>
 

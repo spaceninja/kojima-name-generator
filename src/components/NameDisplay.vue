@@ -60,7 +60,7 @@ export default {
     nameSuffix() {
       let suffix = '';
       if (this.activeConditions.isMan) suffix += 'man';
-      if (this.activeConditions.isClone) suffix += ' (clone)';
+      // if (this.activeConditions.isClone) suffix += ' (clone)';
       return suffix;
     },
     namePrefix() {
@@ -89,6 +89,7 @@ export default {
 section {
   text-align: center;
 }
+
 h2 {
   border: 1rem solid red;
   border-radius: 1rem;
@@ -96,19 +97,23 @@ h2 {
   line-height: 1;
   margin: 0.5em 0 0.5em;
 }
+
 span {
   display: block;
 }
+
 .introduction {
   background: red;
   color: white;
   font-size: 50%;
   padding-bottom: 1rem;
 }
+
 .hello {
   font-size: 200%;
   font-weight: 500;
 }
+
 strong {
   display: block;
   font-family: 'Permanent Marker', Chalkboard, ChalkboardSE-Regular,
@@ -117,5 +122,15 @@ strong {
   line-height: 1.2;
   padding: 1em 0.5em;
   text-transform: capitalize;
+}
+
+@media (prefers-color-scheme: dark) {
+  h2 {
+    border-color: maroon;
+  }
+
+  .introduction {
+    background: maroon;
+  }
 }
 </style>

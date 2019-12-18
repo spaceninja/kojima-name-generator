@@ -1,36 +1,39 @@
 <template>
-  <div>
-    <h4>You have a <strong>Violent Name</strong></h4>
-    <blockquote>
-      <p>
-        Sometimes, a Kojima name can be very threatening and violent, like
-        Sniper Wolf, or The Fury. Now you can also be threatening and violent.
-      </p>
-    </blockquote>
-    <h5>Examples:</h5>
-    <ul>
-      <li>Machinegun Kid (Metal Gear)</li>
-      <li>Sniper Wolf (MGS)</li>
-      <li>The Fury (MGS3)</li>
-    </ul>
+  <section class="category">
+    <header class="category__header">
+      <h4>You have a Violent Name</h4>
+      <blockquote>
+        <p>
+          Sometimes, a Kojima name can be very threatening and violent. Now you
+          can also be threatening and violent.
+        </p>
+      </blockquote>
+      <h5>Examples:</h5>
+      <ul>
+        <li>Machinegun Kid (Metal Gear)</li>
+        <li>Sniper Wolf (MGS)</li>
+        <li>The Fury (MGS3)</li>
+      </ul>
+    </header>
+    <div class="category__content">
+      <!-- 2.05 - InfoStabbed -->
+      <InfoStabbed @change="setLastName" />
 
-    <!-- 2.05 - InfoStabbed -->
-    <InfoStabbed @change="setLastName" />
-
-    <!--
+      <!--
       1. 3.19 - InfoNPRScience
       2. 2.12 - InfoMatterState
       3. 3.20 - InfoMilitaryHardware
       4. 2.09 - InfoTangibleFear
     -->
-    <InfoNPRScience v-if="firstNameCategory === 1" @change="setFirstName" />
-    <InfoMatterState v-if="firstNameCategory === 2" @change="setFirstName" />
-    <InfoMilitaryHardware
-      v-if="firstNameCategory === 3"
-      @change="setFirstName"
-    />
-    <InfoTangibleFear v-if="firstNameCategory === 4" @change="setFirstName" />
-  </div>
+      <InfoNPRScience v-if="firstNameCategory === 1" @change="setFirstName" />
+      <InfoMatterState v-if="firstNameCategory === 2" @change="setFirstName" />
+      <InfoMilitaryHardware
+        v-if="firstNameCategory === 3"
+        @change="setFirstName"
+      />
+      <InfoTangibleFear v-if="firstNameCategory === 4" @change="setFirstName" />
+    </div>
+  </section>
 </template>
 
 <script>

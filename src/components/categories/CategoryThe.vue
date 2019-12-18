@@ -1,37 +1,43 @@
 <template>
-  <div>
-    <h4>You have a <strong>“The” Name</strong></h4>
-    <blockquote>
-      <p>
-        Kojima loves to make people have names that start with the word “The”
-        and they usually symbolize fears or unstoppable forces. You are now that
-        unstoppable force.
-      </p>
-    </blockquote>
-    <h5>Examples:</h5>
-    <ul>
-      <li>The Pain (MGS3)</li>
-      <li>The Sorrow (MGS3)</li>
-      <li>The Viscount (MGSV)</li>
-    </ul>
-
-    <!--
+  <section class="category">
+    <header class="category__header">
+      <h4>You have a “The” Name</h4>
+      <blockquote>
+        <p>
+          Kojima loves to make people have names that start with the word “The”
+          and they usually symbolize fears or unstoppable forces. You are now
+          that unstoppable force.
+        </p>
+      </blockquote>
+      <h5>Examples:</h5>
+      <ul>
+        <li>The Pain (MGS3)</li>
+        <li>The Sorrow (MGS3)</li>
+        <li>The Viscount (MGSV)</li>
+      </ul>
+    </header>
+    <div class="category__content">
+      <!--
       1. 2.08 - InfoIntangibleFear
       2. 2.09 - InfoTangibleFear
       3. 2.04 - InfoEmbarrassingMemory
       4. 3.20 - InfoMilitaryHardware
     -->
-    <InfoIntangibleFear v-if="firstNameCategory === 1" @change="setfirstName" />
-    <InfoTangibleFear v-if="firstNameCategory === 2" @change="setfirstName" />
-    <InfoEmbarrassingMemory
-      v-if="firstNameCategory === 3"
-      @change="setfirstName"
-    />
-    <InfoMilitaryHardware
-      v-if="firstNameCategory === 4"
-      @change="setfirstName"
-    />
-  </div>
+      <InfoIntangibleFear
+        v-if="firstNameCategory === 1"
+        @change="setfirstName"
+      />
+      <InfoTangibleFear v-if="firstNameCategory === 2" @change="setfirstName" />
+      <InfoEmbarrassingMemory
+        v-if="firstNameCategory === 3"
+        @change="setfirstName"
+      />
+      <InfoMilitaryHardware
+        v-if="firstNameCategory === 4"
+        @change="setfirstName"
+      />
+    </div>
+  </section>
 </template>
 
 <script>

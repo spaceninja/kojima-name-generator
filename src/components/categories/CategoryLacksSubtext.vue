@@ -1,21 +1,24 @@
 <template>
-  <div>
-    <h4>You have a <strong>Name that Lacks Subtext</strong></h4>
-    <blockquote>
-      <p>
-        Sometimes, Kojima gives up and just names a character exactly what they
-        are. Congratulations. You are exactly what you do.
-      </p>
-    </blockquote>
-    <h5>Examples:</h5>
-    <ul>
-      <li>The Boss (MGS3)</li>
-      <li>Deadman (Death Stranding)</li>
-      <li>Fatman (MGS2)</li>
-    </ul>
-
-    <InfoRecentActivity @change="setfirstName" />
-  </div>
+  <section class="category">
+    <header class="category__header">
+      <h4>You have a Name that Lacks Subtext</h4>
+      <blockquote>
+        <p>
+          Sometimes, Kojima gives up and just names a character exactly what
+          they are. Congratulations. You are exactly what you do.
+        </p>
+      </blockquote>
+      <h5>Examples:</h5>
+      <ul>
+        <li>Fatman (MGS2)</li>
+        <li>The Boss (MGS3)</li>
+        <li>Deadman (Death Stranding)</li>
+      </ul>
+    </header>
+    <div class="category__content">
+      <InfoRecentActivity @change="setfirstName" />
+    </div>
+  </section>
 </template>
 
 <script>
