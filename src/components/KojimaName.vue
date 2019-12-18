@@ -12,8 +12,8 @@
           That’s Not My Name!
         </button>
         <p class="form-help-text">
-          It’s okay. Kojima often creates characters that have many alternate
-          names. Give it another try!
+          Kojima often creates characters that have many alternate names. Give
+          it another try!
         </p>
       </FormGroup>
     </template>

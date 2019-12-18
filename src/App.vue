@@ -90,6 +90,17 @@ main {
   flex: 1;
 }
 
+a {
+  color: maroon;
+  text-decoration: underline;
+  transition: color 0.2s;
+
+  &:hover,
+  &:focus {
+    color: red;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -200,7 +211,7 @@ label {
 }
 
 .btn {
-  background-color: #999999;
+  background-color: #888888;
   border: 0;
   border-radius: 0.25em;
   box-sizing: border-box;
