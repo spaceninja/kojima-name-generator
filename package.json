@@ -29,7 +29,7 @@
     "stylelint": "12.0.1",
     "stylelint-config-prettier": "7.0.0",
     "stylelint-config-spaceninja": "5.0.0",
-    "stylelint-prettier": "1.1.1",
+    "stylelint-prettier": "1.2.0",
     "vue-template-compiler": "2.6.10"
   }
 }
