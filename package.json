@@ -9,7 +9,7 @@
     "lint:style": "vue-cli-service lint:style"
   },
   "dependencies": {
-    "core-js": "3.4.5",
+    "core-js": "3.17.3",
     "vue": "2.6.10"
   },
   "devDependencies": {
