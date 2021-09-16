@@ -1,4 +1,4 @@
-<template functional>
+<template>
   <footer key="footer">
     <p>
       Based on the

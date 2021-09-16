@@ -1,16 +1,16 @@
-<template functional>
-  <div v-if="props.type === 'checkbox'" class="form-group form-check">
+<template>
+  <div v-if="type === 'checkbox'" class="form-group form-check">
     <slot />
-    <label class="form-check-label" :for="props.labelFor">
-      {{ props.label }}
+    <label class="form-check-label" :for="labelFor">
+      {{ label }}
     </label>
   </div>
-  <div v-else-if="props.type === 'actions'" class="form-group form-actions">
+  <div v-else-if="type === 'actions'" class="form-group form-actions">
     <slot />
   </div>
   <div v-else class="form-group">
-    <label class="form-label" :for="props.labelFor">
-      {{ props.label }}
+    <label class="form-label" :for="labelFor">
+      {{ label }}
     </label>
     <slot />
   </div>
@@ -21,7 +21,7 @@ export default {
   props: {
     labelFor: {
       type: String,
-      required: true,
+      default: null,
     },
     label: {
       type: String,

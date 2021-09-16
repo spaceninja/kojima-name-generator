@@ -1,8 +1,7 @@
 module.exports = {
-  root: true,
-  plugins: ['stylelint-prettier'],
   extends: ['stylelint-config-spaceninja', 'stylelint-config-prettier'],
   rules: {
-    'prettier/prettier': true,
-  },
+    // override/add rules settings here, such as:
+    // 'color-no-invalid-hex': false,
+  }
 };

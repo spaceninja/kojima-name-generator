@@ -12,7 +12,6 @@ import KojimaName from './components/KojimaName.vue';
 import AppFooter from './components/AppFooter.vue';
 
 export default {
-  name: 'App',
   components: {
     AppHeader,
     KojimaName,
@@ -22,8 +21,6 @@ export default {
 </script>
 
 <style lang="scss">
-// TODO: move to static file so this isn't inlined on every page or use min version
-@import './assets/css/reboot.css';
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Open+Sans:400,400i,700,700i&display=swap');
 
 html,
