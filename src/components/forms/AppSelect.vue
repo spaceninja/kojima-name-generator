@@ -1,7 +1,7 @@
 <template>
   <select
     :value="modelValue"
-    @change="$emit('update:modelValue', $event.target.checked)"
+    @change="$emit('update:modelValue', $event.target.value)"
   >
     <option disabled value="">Please select one</option>
     <template v-if="simple">

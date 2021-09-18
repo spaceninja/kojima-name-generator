@@ -3,5 +3,5 @@ module.exports = {
   rules: {
     // override/add rules settings here, such as:
     // 'color-no-invalid-hex': false,
-  }
+  },
 };

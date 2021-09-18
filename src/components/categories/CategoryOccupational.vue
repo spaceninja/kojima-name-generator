@@ -53,6 +53,7 @@ export default {
     InfoNameHomonym,
     InfoFaveKurtRussell,
   },
+  emits: ['name-change'],
   data() {
     return {
       firstName: '',

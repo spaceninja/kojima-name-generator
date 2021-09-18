@@ -53,6 +53,7 @@ export default {
     InfoZodiacSign,
     InfoLickable,
   },
+  emits: ['name-change'],
   data() {
     return {
       firstName: '',

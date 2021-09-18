@@ -60,6 +60,7 @@ export default {
     InfoIntangibleFear,
     InfoNameHomonym,
   },
+  emits: ['name-change'],
   data() {
     return {
       firstName: '',
