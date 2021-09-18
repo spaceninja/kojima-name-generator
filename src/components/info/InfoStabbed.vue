@@ -3,7 +3,11 @@
     label="What is the object you’d least like to be stabbed by?"
     label-for="info-stabbed"
   >
-    <AppInput id="info-stabbed" v-model="stabbed" @input="onInput" />
+    <AppInput
+      id="info-stabbed"
+      v-model="stabbed"
+      @update:modelValue="onInput"
+    />
   </FormGroup>
 </template>
 
@@ -16,6 +20,7 @@ export default {
     FormGroup,
     AppInput,
   },
+  emits: ['change'],
   data() {
     return {
       stabbed: '',

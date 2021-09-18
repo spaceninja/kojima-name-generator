@@ -1,6 +1,6 @@
 <template>
   <FormGroup label="What is something you are good at?" label-for="info-skill">
-    <AppInput id="info-skill" v-model="skill" @input="onInput" />
+    <AppInput id="info-skill" v-model="skill" @update:modelValue="onInput" />
     <small class="form-help-text">Verb ending in “-ing”.</small>
   </FormGroup>
 </template>
@@ -14,6 +14,7 @@ export default {
     FormGroup,
     AppInput,
   },
+  emits: ['change'],
   data() {
     return {
       skill: '',

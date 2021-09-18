@@ -3,7 +3,11 @@
     label="What do you do at your occupation?"
     label-for="info-occupation"
   >
-    <AppInput id="info-occupation" v-model="occupation" @input="onInput" />
+    <AppInput
+      id="info-occupation"
+      v-model="occupation"
+      @update:modelValue="onInput"
+    />
     <small class="form-help-text">
       Condense the verb in your answer into a single “-er” noun. (e.g. if you
       are a sheep farmer, your answer will be “Farmer.”)
@@ -20,6 +24,7 @@ export default {
     FormGroup,
     AppInput,
   },
+  emits: ['change'],
   data() {
     return {
       occupation: '',

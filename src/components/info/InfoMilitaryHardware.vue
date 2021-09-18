@@ -6,11 +6,9 @@
     <AppInput
       id="info-military-hardware"
       v-model="militaryHardware"
-      @input="onInput"
+      @update:modelValue="onInput"
     />
-    <small class="form-help-text">
-      Singular. e.g., “Railgun”.
-    </small>
+    <small class="form-help-text"> Singular. e.g., “Railgun”. </small>
   </FormGroup>
 </template>
 
@@ -23,6 +21,7 @@ export default {
     FormGroup,
     AppInput,
   },
+  emits: ['change'],
   data() {
     return {
       militaryHardware: '',

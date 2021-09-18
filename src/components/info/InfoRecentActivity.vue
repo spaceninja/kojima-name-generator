@@ -6,7 +6,7 @@
     <AppInput
       id="info-recent-activity"
       v-model="recentActivity"
-      @input="onInput"
+      @update:modelValue="onInput"
     />
   </FormGroup>
 </template>
@@ -20,6 +20,7 @@ export default {
     FormGroup,
     AppInput,
   },
+  emits: ['change'],
   data() {
     return {
       recentActivity: '',

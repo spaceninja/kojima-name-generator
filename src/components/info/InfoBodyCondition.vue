@@ -6,11 +6,9 @@
     <AppInput
       id="info-body-condition"
       v-model="bodyCondition"
-      @input="onInput"
+      @update:modelValue="onInput"
     />
-    <small class="form-help-text">
-      Single word answer, e.g. “Bloated”.
-    </small>
+    <small class="form-help-text"> Single word answer, e.g. “Bloated”. </small>
   </FormGroup>
 </template>
 
@@ -23,6 +21,7 @@ export default {
     FormGroup,
     AppInput,
   },
+  emits: ['change'],
   data() {
     return {
       bodyCondition: '',

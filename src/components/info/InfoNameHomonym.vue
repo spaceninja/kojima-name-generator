@@ -3,7 +3,11 @@
     label="What is a word your name kind of sounds like?"
     label-for="info-name-homonym"
   >
-    <AppInput id="info-name-homonym" v-model="nameHomonym" @input="onInput" />
+    <AppInput
+      id="info-name-homonym"
+      v-model="nameHomonym"
+      @update:modelValue="onInput"
+    />
     <small class="form-help-text">
       Emphasis on “kind of.” e.g. Brian: Brain; Travis: Starfish; Scott:
       Scorpion;
@@ -20,6 +24,7 @@ export default {
     FormGroup,
     AppInput,
   },
+  emits: ['change'],
   data() {
     return {
       nameHomonym: '',
