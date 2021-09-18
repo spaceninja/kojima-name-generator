@@ -7,7 +7,7 @@
       id="info-fave-joy-division"
       v-model="faveJoyDivision"
       :options="options"
-      @change="onChange"
+      @update:modelValue="onChange"
     />
   </FormGroup>
 </template>
@@ -21,6 +21,7 @@ export default {
     FormGroup,
     AppSelect,
   },
+  emits: ['change'],
   data() {
     return {
       faveJoyDivision: '',

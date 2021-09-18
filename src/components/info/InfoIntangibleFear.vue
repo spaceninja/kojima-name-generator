@@ -6,11 +6,9 @@
     <AppInput
       id="info-intangible-fear"
       v-model="intangibleFear"
-      @input="onInput"
+      @update:modelValue="onInput"
     />
-    <small class="form-help-text">
-      e.g. Death, Loneliness, Fear Itself.
-    </small>
+    <small class="form-help-text"> e.g. Death, Loneliness, Fear Itself. </small>
   </FormGroup>
 </template>
 
@@ -23,6 +21,7 @@ export default {
     FormGroup,
     AppInput,
   },
+  emits: ['change'],
   data() {
     return {
       intangibleFear: '',

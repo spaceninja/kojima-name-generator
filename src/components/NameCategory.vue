@@ -52,6 +52,7 @@ export default {
     CategoryViolent,
     CategoryLacksSubtext,
   },
+  emits: ['name-change', 'conditions-change'],
   data() {
     return {
       nameCategory: getRandomInt(1, 20),

@@ -1,28 +1,20 @@
 <template>
   <input
-    :checked="checked"
+    :checked="modelValue"
     class="form-check-input"
     type="checkbox"
-    @change="onChange"
+    @change="$emit('update:modelValue', $event.target.checked)"
   />
 </template>
 
 <script>
 export default {
-  model: {
-    prop: 'checked',
-    event: 'change',
-  },
   props: {
-    checked: {
+    modelValue: {
       type: Boolean,
       default: false,
     },
   },
-  methods: {
-    onChange(e) {
-      this.$emit('change', e.target.checked);
-    },
-  },
+  emits: ['update:modelValue'],
 };
 </script>

@@ -3,10 +3,12 @@
     label="What is your greatest tangible fear?"
     label-for="info-tangible-fear"
   >
-    <AppInput id="info-tangible-fear" v-model="tangibleFear" @input="onInput" />
-    <small class="form-help-text">
-      Singular. e.g., “Horse”.
-    </small>
+    <AppInput
+      id="info-tangible-fear"
+      v-model="tangibleFear"
+      @update:modelValue="onInput"
+    />
+    <small class="form-help-text"> Singular. e.g., “Horse”. </small>
   </FormGroup>
 </template>
 
@@ -19,6 +21,7 @@ export default {
     FormGroup,
     AppInput,
   },
+  emits: ['change'],
   data() {
     return {
       tangibleFear: '',

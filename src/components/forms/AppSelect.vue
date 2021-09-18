@@ -1,5 +1,8 @@
 <template>
-  <select v-model="selected" @change="onChange">
+  <select
+    :value="modelValue"
+    @change="$emit('update:modelValue', $event.target.value)"
+  >
     <option disabled value="">Please select one</option>
     <template v-if="simple">
       <option v-for="option in options" :key="option" :value="option">
@@ -20,10 +23,6 @@
 
 <script>
 export default {
-  model: {
-    prop: 'selected',
-    event: 'change',
-  },
   props: {
     options: {
       type: Array,
@@ -33,16 +32,11 @@ export default {
       type: Boolean,
       default: false,
     },
-  },
-  data() {
-    return {
-      selected: '',
-    };
-  },
-  methods: {
-    onChange(e) {
-      this.$emit('change', e.target.value);
+    modelValue: {
+      type: String,
+      default: '',
     },
   },
+  emits: ['update:modelValue'],
 };
 </script>

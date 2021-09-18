@@ -28,9 +28,7 @@
       <NameConditions @conditions-change="setConditions" />
 
       <FormGroup type="actions">
-        <button class="btn btn-primary">
-          Generate Your Kojima Name
-        </button>
+        <button class="btn btn-primary">Generate Your Kojima Name</button>
       </FormGroup>
     </form>
   </main>

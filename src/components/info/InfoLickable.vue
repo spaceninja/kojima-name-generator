@@ -4,7 +4,11 @@
     label-for="info-lickable"
     type="checkbox"
   >
-    <AppCheckbox id="info-lickable" v-model="lickable" @change="onChange" />
+    <AppCheckbox
+      id="info-lickable"
+      v-model="lickable"
+      @update:modelValue="onChange"
+    />
   </FormGroup>
 </template>
 
@@ -17,6 +21,7 @@ export default {
     FormGroup,
     AppCheckbox,
   },
+  emits: ['change'],
   data() {
     return {
       lickable: false,

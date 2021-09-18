@@ -79,6 +79,7 @@ export default {
   components: {
     InfoBodyCondition,
   },
+  emits: ['conditions-change'],
   data() {
     return {
       manRoll: getRandomInt(1, 4),

@@ -4,6 +4,7 @@
 
 <script>
 export default {
+  emits: ['change'],
   created() {
     this.$emit('change', 'Naked');
   },

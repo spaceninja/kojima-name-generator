@@ -7,7 +7,7 @@
       id="info-fave-kubrick-film"
       v-model="faveKubrickFilm"
       :options="options"
-      @change="onChange"
+      @update:modelValue="onChange"
     />
   </FormGroup>
 </template>
@@ -21,6 +21,7 @@ export default {
     FormGroup,
     AppSelect,
   },
+  emits: ['change'],
   data() {
     return {
       faveKubrickFilm: '',
