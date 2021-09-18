@@ -3,7 +3,11 @@
     label="How many carrots do you believe you could eat in one sitting?"
     label-for="info-carrots"
   >
-    <AppInput id="info-carrots" v-model="carrots" @input="onInput" />
+    <AppInput
+      id="info-carrots"
+      v-model="carrots"
+      @update:modelValue="onInput"
+    />
     <small class="form-help-text">
       If someone, like, forced you to eat as many carrots as possible?
     </small>
@@ -19,6 +23,7 @@ export default {
     FormGroup,
     AppInput,
   },
+  emits: ['change'],
   data() {
     return {
       carrots: '',

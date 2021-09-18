@@ -57,20 +57,16 @@ export default {
   },
   methods: {
     setName(name) {
-      console.log('SET NAME', name);
       this.firstName = name.firstName;
       this.lastName = name.lastName;
     },
     setConditions(conditions) {
-      console.log('SET CONDITIONS', conditions);
       this.activeConditions = { ...this.activeConditions, ...conditions };
     },
     generateName() {
-      console.log('GENERATE NAME');
       this.isGenerated = true;
     },
     resetName() {
-      console.log('RESET NAME');
       this.activeConditions = {};
       this.firstName = '';
       this.lastName = '';

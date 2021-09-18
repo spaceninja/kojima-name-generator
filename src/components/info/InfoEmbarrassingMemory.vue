@@ -3,10 +3,12 @@
     label="What’s your most embarrassing childhood memory?"
     label-for="info-embarrasing-memory"
   >
-    <AppInput id="info-embarrasing-memory" v-model="memory" @input="onInput" />
-    <small class="form-help-text">
-      Condense this story into two words.
-    </small>
+    <AppInput
+      id="info-embarrasing-memory"
+      v-model="memory"
+      @update:modelValue="onInput"
+    />
+    <small class="form-help-text"> Condense this story into two words. </small>
   </FormGroup>
 </template>
 
@@ -19,6 +21,7 @@ export default {
     FormGroup,
     AppInput,
   },
+  emits: ['change'],
   data() {
     return {
       memory: '',

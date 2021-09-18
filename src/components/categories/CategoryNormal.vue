@@ -31,6 +31,7 @@ export default {
   components: {
     InfoFullName,
   },
+  emits: ['name-change'],
   methods: {
     setName(name) {
       this.$emit('name-change', name);

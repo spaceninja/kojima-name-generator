@@ -4,14 +4,14 @@
     class="form-control"
     :type="type"
     required
-    :value="value"
+    :value="modelValue"
     @input="onInput"
   />
   <textarea
     v-else
     class="form-control"
     :type="type"
-    :value="value"
+    :value="modelValue"
     @input="onInput"
   />
 </template>
@@ -23,14 +23,15 @@ export default {
       type: String,
       default: 'text',
     },
-    value: {
+    modelValue: {
       type: String,
       default: '',
     },
   },
+  emits: ['update:modelValue'],
   methods: {
     onInput(e) {
-      this.$emit('input', e.target.value);
+      this.$emit('update:modelValue', e.target.value);
     },
   },
 };

@@ -3,11 +3,19 @@
     <legend>What is your full name?</legend>
 
     <FormGroup label="First Name" label-for="first-name">
-      <AppInput id="first-name" v-model="firstName" @input="onInput" />
+      <AppInput
+        id="first-name"
+        v-model="firstName"
+        @update:modelValue="onInput"
+      />
     </FormGroup>
 
     <FormGroup label="Last Name" label-for="last-name">
-      <AppInput id="last-name" v-model="lastName" @input="onInput" />
+      <AppInput
+        id="last-name"
+        v-model="lastName"
+        @update:modelValue="onInput"
+      />
     </FormGroup>
   </fieldset>
 </template>
@@ -21,6 +29,7 @@ export default {
     FormGroup,
     AppInput,
   },
+  emits: ['change'],
   data() {
     return {
       firstName: '',

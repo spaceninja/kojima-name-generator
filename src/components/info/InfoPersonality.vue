@@ -3,7 +3,11 @@
     label="If you had to define your personality in one word, what would it be?"
     label-for="info-personality"
   >
-    <AppInput id="info-personality" v-model="personality" @input="onInput" />
+    <AppInput
+      id="info-personality"
+      v-model="personality"
+      @update:modelValue="onInput"
+    />
   </FormGroup>
 </template>
 
@@ -16,6 +20,7 @@ export default {
     FormGroup,
     AppInput,
   },
+  emits: ['change'],
   data() {
     return {
       personality: '',
