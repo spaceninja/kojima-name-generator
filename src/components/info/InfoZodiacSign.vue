@@ -5,7 +5,7 @@
       v-model="zodiacSign"
       :options="options"
       :simple="true"
-      @change="onChange"
+      @update:modelValue="onChange"
     />
   </FormGroup>
 </template>
@@ -19,6 +19,7 @@ export default {
     FormGroup,
     AppSelect,
   },
+  emits: ['change'],
   data() {
     return {
       zodiacSign: '',

@@ -28,6 +28,7 @@ export default {
   components: {
     InfoRecentActivity,
   },
+  emits: ['conditions-change', 'name-change'],
   data() {
     return {
       firstName: '',

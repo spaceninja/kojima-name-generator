@@ -54,6 +54,7 @@ export default {
     InfoEmbarrassingMemory,
     InfoMilitaryHardware,
   },
+  emits: ['conditions-change', 'name-change'],
   data() {
     return {
       firstName: '',

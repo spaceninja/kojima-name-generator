@@ -52,6 +52,7 @@ export default {
     InfoMilitaryHardware,
     InfoTangibleFear,
   },
+  emits: ['name-change'],
   data() {
     return {
       firstName: '',

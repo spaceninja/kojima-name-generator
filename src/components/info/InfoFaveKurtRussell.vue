@@ -7,11 +7,9 @@
       id="info-favorite-kurt-russell"
       v-model="faveKurtRussell"
       :options="options"
-      @change="onChange"
+      @update:modelValue="onChange"
     />
-    <small class="form-help-text">
-      Must be played by Kurt Russell.
-    </small>
+    <small class="form-help-text"> Must be played by Kurt Russell. </small>
   </FormGroup>
 </template>
 
@@ -24,6 +22,7 @@ export default {
     FormGroup,
     AppSelect,
   },
+  emits: ['change'],
   data() {
     return {
       faveKurtRussell: '',
