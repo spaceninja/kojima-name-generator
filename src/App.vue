@@ -69,7 +69,7 @@ main {
 }
 
 .category__header {
-  background: #eeeeee;
+  background: #eee;
   flex: 0 0 30%;
   min-width: 250px;
   padding: 1rem;
@@ -90,7 +90,6 @@ main {
 a {
   color: maroon;
   text-decoration: underline;
-  transition: color 0.2s;
 
   &:hover,
   &:focus {
@@ -106,10 +105,6 @@ h5,
 h6 {
   font-family: 'Open Sans Condensed', sans-serif;
   text-transform: uppercase;
-
-  strong {
-    /* font-style: italic; */
-  }
 }
 
 h1,
@@ -189,7 +184,7 @@ label {
   font-size: 0.85rem;
   font-style: italic;
   margin-top: 0.5rem;
-  opacity: 0.75;
+  opacity: 75%;
 }
 
 .form-check {
@@ -208,11 +203,11 @@ label {
 }
 
 .btn {
-  background-color: #888888;
+  background-color: #888;
   border: 0;
   border-radius: 0.25em;
   box-sizing: border-box;
-  color: #ffffff;
+  color: #fff;
   cursor: pointer;
   display: inline-block;
   font-family: 'Open Sans Condensed', sans-serif;
@@ -226,8 +221,13 @@ label {
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
+  // stylelint-disable-next-line plugin/no-low-performance-animation-properties
   transition: background-color 0.2s;
   vertical-align: top;
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
 
   @media screen and (min-width: 375px) {
     font-size: 1.25rem;
@@ -240,11 +240,11 @@ label {
   &:hover,
   &:focus,
   &:active {
-    background-color: #666666;
-    color: #ffffff;
+    background-color: #666;
+    color: #fff;
   }
   .icon {
-    background: rgba(0, 0, 0, 0) 0 0 no-repeat;
+    background: rgb(0 0 0 / 0%) 0 0 no-repeat;
     display: inline-block;
     height: 1.33em;
     position: relative;
@@ -302,8 +302,8 @@ label {
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: rgb(38, 50, 56);
-    color: rgba(255, 255, 255, 0.5);
+    background-color: rgb(38 50 56);
+    color: rgb(255 255 255 / 50%);
   }
 
   h1,
@@ -312,17 +312,17 @@ label {
   h4,
   h5,
   h6 {
-    color: rgba(255, 255, 255, 0.75);
+    color: rgb(255 255 255 / 75%);
   }
 
   input {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(255 255 255 / 10%);
     border: 0;
     color: currentColor;
   }
 
   .category__header {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(255 255 255 / 10%);
   }
 
   .btn-primary {

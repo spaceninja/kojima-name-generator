@@ -22,7 +22,7 @@ export default {};
 
 <style lang="scss" scoped>
 footer {
-  background: #eeeeee;
+  background: #eee;
   font-size: 0.8rem;
   padding: 1rem;
   text-align: center;
@@ -42,7 +42,7 @@ blockquote {
 
 @media (prefers-color-scheme: dark) {
   footer {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(255 255 255 / 10%);
   }
 }
 </style>
