@@ -14,7 +14,7 @@ export default {};
 
 <style lang="scss" scoped>
 header {
-  background: #eeeeee;
+  background: #eee;
   padding: 1rem;
   text-align: center;
 
@@ -30,10 +30,10 @@ h1 {
   text-transform: uppercase;
 
   @supports (font-size: clamp(1px, 1em, 2px)) {
-    --minFontSize: 30px;
-    --maxFontSize: 80px;
+    --min-font-size: 30px;
+    --max-font-size: 80px;
     --scaler: 6vw;
-    font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
+    font-size: clamp(var(--min-font-size), var(--scaler), var(--max-font-size));
   }
 }
 
@@ -52,7 +52,7 @@ span {
 
 @media (prefers-color-scheme: dark) {
   header {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(255 255 255 / 10%);
   }
 }
 </style>

@@ -106,7 +106,7 @@ h2 {
   border-radius: 1rem;
   border-width: 1rem 0.25rem;
   line-height: 1;
-  margin: 0.5em 0 0.5em;
+  margin: 0.5em 0;
 }
 
 span {
