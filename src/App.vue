@@ -243,6 +243,7 @@ label {
     background-color: #666;
     color: #fff;
   }
+
   .icon {
     background: rgb(0 0 0 / 0%) 0 0 no-repeat;
     display: inline-block;

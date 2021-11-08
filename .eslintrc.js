@@ -4,8 +4,12 @@ module.exports = {
   },
   extends: ['eslint:recommended', 'plugin:vue/vue3-recommended', 'prettier'],
   rules: {
-    // override/add rules settings here, such as:
-    // 'vue/no-unused-vars': 'error'
+    // this shouldn't be needed: https://github.com/vuejs/eslint-plugin-vue/issues/1635
+    'vue/v-on-event-hyphenation': [
+      'warn',
+      'always',
+      { ignore: ['update:modelValue'] },
+    ],
   },
   overrides: [
     {
