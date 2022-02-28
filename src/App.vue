@@ -319,7 +319,7 @@ label {
   input {
     background: rgb(255 255 255 / 10%);
     border: 0;
-    color: currentColor;
+    color: currentcolor;
   }
 
   .category__header {
