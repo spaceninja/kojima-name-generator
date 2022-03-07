@@ -184,7 +184,7 @@ label {
   font-size: 0.85rem;
   font-style: italic;
   margin-top: 0.5rem;
-  opacity: 75%;
+  opacity: 0.75;
 }
 
 .form-check {
