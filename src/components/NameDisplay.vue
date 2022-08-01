@@ -95,7 +95,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+@import 'https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap';
 
 section {
   text-align: center;
