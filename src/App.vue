@@ -51,7 +51,7 @@ main {
   max-width: 1280px;
   padding: 1rem;
 
-  @media screen and (min-width: 480px) {
+  @media screen and (width >= 480px) {
     padding: 2rem;
   }
 }
@@ -63,7 +63,7 @@ main {
 .category {
   margin: 2rem 0;
 
-  @media screen and (min-width: 760px) {
+  @media screen and (width >= 760px) {
     display: flex;
   }
 }
@@ -74,7 +74,7 @@ main {
   min-width: 250px;
   padding: 1rem;
 
-  @media screen and (min-width: 760px) {
+  @media screen and (width >= 760px) {
     margin-right: 2rem;
   }
 
@@ -116,7 +116,7 @@ h3 {
 h1 {
   font-size: 1.5em;
 
-  @media screen and (min-width: 480px) {
+  @media screen and (width >= 480px) {
     font-size: 2em;
   }
 }
@@ -124,15 +124,15 @@ h1 {
 h2 {
   font-size: 2em;
 
-  @media screen and (min-width: 375px) {
+  @media screen and (width >= 375px) {
     font-size: 2.5em;
   }
 
-  @media screen and (min-width: 480px) {
+  @media screen and (width >= 480px) {
     font-size: 3em;
   }
 
-  @media screen and (min-width: 640px) {
+  @media screen and (width >= 640px) {
     font-size: 4em;
   }
 }
@@ -229,11 +229,11 @@ label {
     transition: none;
   }
 
-  @media screen and (min-width: 375px) {
+  @media screen and (width >= 375px) {
     font-size: 1.25rem;
   }
 
-  @media screen and (min-width: 480px) {
+  @media screen and (width >= 480px) {
     font-size: 1.5rem;
   }
 

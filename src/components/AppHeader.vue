@@ -18,7 +18,7 @@ header {
   padding: 1rem;
   text-align: center;
 
-  @media screen and (min-width: 480px) {
+  @media screen and (width >= 480px) {
     padding: 2rem;
   }
 }
@@ -44,7 +44,7 @@ p {
 span {
   margin-right: 0.25em;
 
-  @media screen and (min-width: 480px) {
+  @media screen and (width >= 480px) {
     display: inline-block;
     margin: 0.25em 0.25em 0;
   }

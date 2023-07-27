@@ -27,7 +27,7 @@ footer {
   padding: 1rem;
   text-align: center;
 
-  @media screen and (min-width: 480px) {
+  @media screen and (width >= 480px) {
     padding: 2rem;
   }
 }
