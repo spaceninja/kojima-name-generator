@@ -31,6 +31,6 @@
     "stylelint": "16.2.1",
     "stylelint-config-recommended-vue": "1.5.0",
     "stylelint-config-spaceninja": "15.0.0",
-    "vite": "5.1.0"
+    "vite": "5.1.1"
   }
 }
