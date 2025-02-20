@@ -127,8 +127,9 @@ span {
 
 strong {
   display: block;
-  font-family: 'Permanent Marker', Chalkboard, ChalkboardSE-Regular,
-    'Comic Sans', 'Comic Sans MS', sans-serif;
+  font-family:
+    'Permanent Marker', Chalkboard, ChalkboardSE-Regular, 'Comic Sans',
+    'Comic Sans MS', sans-serif;
   font-weight: normal;
   line-height: 1.2;
   padding: 1em 0.5em;
