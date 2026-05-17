@@ -9,25 +9,25 @@ Based on the [Kojima Name Generator](https://www.polygon.com/videos/2019/11/11/2
 ## Project setup
 
 ```
-yarn
+npm ci
 ```
 
 ### Compiles and hot-reloads for development
 
 ```
-yarn serve
+npm run serve
 ```
 
 ### Compiles and minifies for production
 
 ```
-yarn build
+npm run build
 ```
 
 ### Lints and fixes files
 
 ```
-yarn lint
+npm run lint
 ```
 
 ### Customize configuration
