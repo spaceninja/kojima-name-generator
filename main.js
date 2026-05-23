@@ -47,12 +47,12 @@ const QUESTIONS = {
   skill: {
     type: 'text',
     label: 'What is something you are good at?',
-    help: 'Verb ending in "-ing".',
+    help: 'Verb ending in “-ing”.',
   },
   nameHomonym: {
     type: 'text',
     label: 'What is a word your name kind of sounds like?',
-    help: 'Emphasis on "kind of." e.g. Brian: Brain; Travis: Starfish; Scott: Scorpion;',
+    help: 'Emphasis on “kind of.” e.g. Brian: Brain; Travis: Starfish; Scott: Scorpion;',
   },
   faveKurtRussell: {
     type: 'select',
@@ -131,7 +131,7 @@ const QUESTIONS = {
   lickable: {
     type: 'checkbox',
     label: "If you feel like it, your middle name can be “Lickable.” I won’t stop you.",
-    checkedValue: '"Lickable"',
+    checkedValue: '“Lickable”',
   },
   intangibleFear: {
     type: 'text',
@@ -286,7 +286,7 @@ const CATEGORIES = {
   },
   the: {
     header: `
-      <h4>You have a "The" Name</h4>
+      <h4>You have a “The” Name</h4>
       <blockquote>
         <p>Kojima loves to make people have names that start with the word
         “The” and they usually symbolize fears or unstoppable forces. You are
@@ -500,7 +500,21 @@ function renderQuestion(questionId, target, container) {
 }
 
 function buildConditionsSection(form) {
-  const hasCondition = state.conditions.isMan || state.conditions.isBig ||
+  if (state.conditions.isKojima) {
+    const section = el('section', { class: 'name-form' });
+    const content = el('div', { class: 'name-form__content' });
+    const div = el('div', {});
+    div.innerHTML = '<h4>You have the Kojima Condition</h4><p>Oh no. You are Hideo Kojima. Hideo Kojima created you and is also you. You are the man who created himself and there is nothing you can do about it. You’re in Kojima’s world—your world—and that’s just the breaks, pal. You’re Hideo Kojima now. Go do the things that Hideo Kojima does.</p>';
+    content.appendChild(div);
+    section.appendChild(content);
+    form.appendChild(section);
+    return;
+  }
+
+  // Suppress the Man panel when isMan came from the LacksSubtext category;
+  // the category card already explains the -man suffix.
+  const showManPanel = state.conditions.isMan && state.category !== 'lacksSubtext';
+  const hasCondition = showManPanel || state.conditions.isBig ||
     state.conditions.isOld || state.conditions.isCurrentCondition || state.conditions.isClone;
 
   if (!hasCondition) return;
@@ -515,25 +529,25 @@ function buildConditionsSection(form) {
 
   const content = el('div', { class: 'name-form__content' });
 
-  if (state.conditions.isMan) {
+  if (showManPanel) {
     const div = el('div', {});
-    div.innerHTML = '<h4>You have the "Man" Condition</h4><p>Your last name will include the suffix <em>-man</em>.</p>';
+    div.innerHTML = '<h4>You have the “Man” Condition</h4><p>Your last name will include the suffix <em>-man</em>.</p>';
     content.appendChild(div);
   }
   if (state.conditions.isBig) {
     const div = el('div', {});
-    div.innerHTML = `<h4>You have the "Big" Condition</h4><p>You’re big. Your name must have "Big" at the beginning of it.</p>`;
+    div.innerHTML = `<h4>You have the “Big” Condition</h4><p>You’re big. Your name must have “Big” at the beginning of it.</p>`;
     content.appendChild(div);
   }
   if (state.conditions.isOld) {
     const div = el('div', {});
-    div.innerHTML = '<h4>You have the "Old" Condition</h4><p>You are older than you once were. Your name must have "Old" at the beginning of it.</p>';
+    div.innerHTML = '<h4>You have the “Old” Condition</h4><p>You are older than you once were. Your name must have “Old” at the beginning of it.</p>';
     content.appendChild(div);
   }
   if (state.conditions.isCurrentCondition) {
     const catSection = el('section', { class: 'category' });
     const catHeader = el('header', { class: 'category__header' });
-    catHeader.innerHTML = '<h4>You have the "Your Current Condition" Condition</h4><p>You are how you currently are. Add the condition your body is currently in to the beginning of your name.</p>';
+    catHeader.innerHTML = '<h4>You have the “Your Current Condition” Condition</h4><p>You are how you currently are. Add the condition your body is currently in to the beginning of your name.</p>';
     catSection.appendChild(catHeader);
     const catContent = el('div', { class: 'category__content' });
     renderQuestion('bodyCondition', 'currentCondition', catContent);
@@ -542,7 +556,7 @@ function buildConditionsSection(form) {
   }
   if (state.conditions.isClone) {
     const div = el('div', {});
-    div.innerHTML = '<h4>You have the Clone Condition</h4><p>You are a clone of someone else, or you have been brainwashed into becoming a mental doppelganger of someone else.</p><p><small>(Currently hard-wired to replace your last name with “Snake.”)</small></p>';
+    div.innerHTML = '<h4>You have the Clone Condition</h4><p>You are a clone of someone else, or you have been brainwashed into becoming a mental doppelganger of someone else.</p><p><small>(Currently hard-wired to replace your last name with “Snake”.)</small></p>';
     content.appendChild(div);
   }
 
@@ -552,41 +566,44 @@ function buildConditionsSection(form) {
 
 function buildForm() {
   const form = document.getElementById('name-form');
-  const cat = CATEGORIES[state.category];
 
-  // Category section
-  const catSection = el('section', { class: 'name-form' });
-  const catHeader = el('header', { class: 'name-form__header' });
-  catHeader.appendChild(el('h3', {}, 'Your Name Category:'));
-  const catBq = el('blockquote', {});
-  catBq.appendChild(el('p', {}, 'Kojima names fall into a finite number of categories. This section will determine the category in which your name belongs.'));
-  catBq.appendChild(el('p', { class: 'form-help-text' }, '(Reload the page for a different category.)'));
-  catHeader.appendChild(catBq);
-  catSection.appendChild(catHeader);
-  form.appendChild(catSection);
+  // Category section — skipped entirely when isKojima
+  if (!state.conditions.isKojima) {
+    const cat = CATEGORIES[state.category];
 
-  const catDiv = el('section', { class: 'category' });
-  const catInnerHeader = el('header', { class: 'category__header' });
-  catInnerHeader.innerHTML = cat.header;
-  catDiv.appendChild(catInnerHeader);
-  const catContent = el('div', { class: 'category__content' });
-  catDiv.appendChild(catContent);
-  catSection.appendChild(catDiv);
+    const catSection = el('section', { class: 'name-form' });
+    const catHeader = el('header', { class: 'name-form__header' });
+    catHeader.appendChild(el('h3', {}, 'Your Name Category:'));
+    const catBq = el('blockquote', {});
+    catBq.appendChild(el('p', {}, 'Kojima names fall into a finite number of categories. This section will determine the category in which your name belongs.'));
+    catBq.appendChild(el('p', { class: 'form-help-text' }, '(Reload the page for a different category.)'));
+    catHeader.appendChild(catBq);
+    catSection.appendChild(catHeader);
+    form.appendChild(catSection);
 
-  // Fixed questions
-  if (cat.fixed) {
-    cat.fixed.forEach(([qId, target]) => renderQuestion(qId, target, catContent));
-  }
+    const catDiv = el('section', { class: 'category' });
+    const catInnerHeader = el('header', { class: 'category__header' });
+    catInnerHeader.innerHTML = cat.header;
+    catDiv.appendChild(catInnerHeader);
+    const catContent = el('div', { class: 'category__content' });
+    catDiv.appendChild(catContent);
+    catSection.appendChild(catDiv);
 
-  // Pick one variant by sub-roll
-  if (cat.variants && cat.variants.length > 0) {
-    const variantIdx = random(1, cat.variants.length);
-    cat.variants[variantIdx - 1].forEach(([qId, target]) => renderQuestion(qId, target, catContent));
-  }
+    // Fixed questions
+    if (cat.fixed) {
+      cat.fixed.forEach(([qId, target]) => renderQuestion(qId, target, catContent));
+    }
 
-  // Fixed questions after variant (e.g. optional middle-name checkbox in Horny)
-  if (cat.fixedAfter) {
-    cat.fixedAfter.forEach(([qId, target]) => renderQuestion(qId, target, catContent));
+    // Pick one variant by sub-roll
+    if (cat.variants && cat.variants.length > 0) {
+      const variantIdx = random(1, cat.variants.length);
+      cat.variants[variantIdx - 1].forEach(([qId, target]) => renderQuestion(qId, target, catContent));
+    }
+
+    // Fixed questions after variant (e.g. optional middle-name checkbox in Horny)
+    if (cat.fixedAfter) {
+      cat.fixedAfter.forEach(([qId, target]) => renderQuestion(qId, target, catContent));
+    }
   }
 
   // Conditions section
@@ -675,16 +692,13 @@ document.addEventListener('DOMContentLoaded', () => {
     location.reload();
   });
 
-  if (state.conditions.isKojima) {
-    showResult();
-    return;
+  if (!state.conditions.isKojima) {
+    state.category = CATEGORY_BY_ROLL[categoryRoll];
+    const cat = CATEGORIES[state.category];
+
+    if (cat.emits === 'isThe') state.conditions.isThe = true;
+    if (cat.emits === 'isMan') state.conditions.isMan = true;
   }
-
-  state.category = CATEGORY_BY_ROLL[categoryRoll];
-  const cat = CATEGORIES[state.category];
-
-  if (cat.emits === 'isThe') state.conditions.isThe = true;
-  if (cat.emits === 'isMan') state.conditions.isMan = true;
 
   buildForm();
 });
