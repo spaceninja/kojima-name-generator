@@ -81,11 +81,11 @@ const QUESTIONS = {
   occupation: {
     type: 'text',
     label: 'What do you do at your occupation?',
-    help: 'Condense the verb in your answer into a single "-er" noun. (e.g. if you are a sheep farmer, your answer will be “Farmer.”)',
+    help: 'Condense the verb in your answer into a single “-er” noun. (e.g. if you are a sheep farmer, your answer will be “Farmer.”)',
   },
   petBreed: {
     type: 'text',
-    label: "What was your first pet's specific species/breed?",
+    label: "What was your first pet’s specific species/breed?",
     help: 'If you never had a pet, please answer with an animal you wish you owned.',
   },
   matterState: {
@@ -145,7 +145,7 @@ const QUESTIONS = {
   },
   embarrassingMemory: {
     type: 'text',
-    label: "What's your most embarrassing childhood memory?",
+    label: "What’s your most embarrassing childhood memory?",
     help: 'Condense this story into two words.',
   },
   militaryHardware: {
@@ -155,7 +155,7 @@ const QUESTIONS = {
   },
   madsMikkelsen: {
     type: 'text',
-    label: "What is something you'd enjoy watching Mads Mikkelsen do?",
+    label: "What is something you’d enjoy watching Mads Mikkelsen do?",
     help: 'Condense into one word.',
   },
   faveKubrick: {
@@ -173,7 +173,7 @@ const QUESTIONS = {
       { text: 'Spartacus', value: 'Spartacus' },
       { text: 'Paths of Glory', value: 'Glory' },
       { text: 'The Killing', value: 'Killing' },
-      { text: "Killer's Kiss", value: 'Kiss' },
+      { text: "Killer’s Kiss", value: 'Kiss' },
       { text: 'Fear and Desire', value: 'Desire' },
     ],
   },
@@ -197,7 +197,7 @@ const QUESTIONS = {
   },
   stabbed: {
     type: 'text',
-    label: "What is the object you'd least like to be stabbed by?",
+    label: "What is the object you’d least like to be stabbed by?",
   },
   recentActivity: {
     type: 'text',
