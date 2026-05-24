@@ -2,34 +2,10 @@
 
 You are born to Hideo Kojima: How does he name you? Follow our comprehensive guide to finding your Kojima Name.
 
-Based on the [Kojima Name Generator](https://www.polygon.com/videos/2019/11/11/20959269/unraveled-kojima-name-generator-death-stranding) [worksheet](https://www.scribd.com/document/434442769/Kojima-Name-Generator) by [Brian David Gilbert](https://twitter.com/briamgilbert).
+Based on the [Kojima Name Generator](https://www.polygon.com/videos/2019/11/11/20959269/unraveled-kojima-name-generator-death-stranding) [worksheet](https://www.scribd.com/document/434442769/Kojima-Name-Generator) by [Brian David Gilbert](https://twitter.com/briamgilbert). Adapted by [Scott Vandehey](https://twitter.com/spaceninja).
 
 > "Hey, Kojima? You can't just name a dude Die-Hardman."
 
-## Project setup
+## Development
 
-```
-npm ci
-```
-
-### Compiles and hot-reloads for development
-
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-
-```
-npm run build
-```
-
-### Lints and fixes files
-
-```
-npm run lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
+This is a static site with no build step or dependencies. Open `index.html` in a browser to work on it, or deploy the repository root as-is (it is served by GitHub Pages).

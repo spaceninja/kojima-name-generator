@@ -2,22 +2,68 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kojima Name Generator</title>
-    <meta
-      name="Description"
-      content="You are born to Hideo Kojima: How does he name you? Follow our comprehensive guide to finding your Kojima Name."
-    />
+    <meta name="description" content="You are born to Hideo Kojima: How does he name you? Follow our comprehensive guide to finding your Kojima Name." />
+    <meta property="og:title" content="Kojima Name Generator" />
+    <meta property="og:description" content="You are born to Hideo Kojima: How does he name you? Follow our comprehensive guide to finding your Kojima Name." />
+    <meta property="og:url" content="https://kojima.oscorp.net/" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Open+Sans:400,400i,700,700i|Permanent+Marker&display=swap" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header>
+      <h1>Kojima Name Generator</h1>
+      <p>
+        <span>You are born to Hideo Kojima: How does he name you?</span>
+        <span>Follow our comprehensive guide to finding your Kojima Name.</span>
+      </p>
+    </header>
+
+    <main>
+      <form id="name-form" hidden></form>
+
+      <section id="result" hidden>
+        <h2>
+          <span class="introduction">
+            <span class="hello">Hello</span>
+            my name is
+          </span>
+          <strong id="result-name"></strong>
+        </h2>
+        <p class="share">
+          <a id="share-twitter" class="btn btn-twitter" target="_blank" rel="noopener noreferrer">
+            <i class="icon"></i><span class="label">Post to Twitter</span>
+          </a>
+          <a id="share-facebook" class="btn btn-facebook" target="_blank" rel="noopener noreferrer">
+            <i class="icon"></i><span class="label">Post to Facebook</span>
+          </a>
+        </p>
+        <div class="form-actions">
+          <button id="reset-btn" class="btn">That’s Not My Name!</button>
+          <p class="form-help-text">Kojima often creates characters that have many alternate names. Give it another try!</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Based on the
+        <a href="https://www.polygon.com/videos/2019/11/11/20959269/unraveled-kojima-name-generator-death-stranding">Kojima Name Generator</a>
+        worksheet by <a href="https://twitter.com/briamgilbert">Brian David Gilbert</a>.
+        Adapted by <a href="https://twitter.com/spaceninja">Scott Vandehey</a>.
+      </p>
+      <blockquote>
+        <p>“Hey, Kojima? You can’t just name a dude Die-Hardman.”</p>
+      </blockquote>
+    </footer>
+
     <noscript>
-      <strong>
-        We're sorry but the Kojima Name Generator doesn't work properly without
-        JavaScript enabled. Please enable it to continue.
-      </strong>
+      <strong>We’re sorry but the Kojima Name Generator doesn’t work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+
+    <script src="main.js" defer></script>
   </body>
 </html>
