@@ -213,8 +213,9 @@ const QUESTIONS = {
 // === Categories ===
 // Each category has:
 //   header: static HTML string for the sidebar
-//   fixed: [[questionId, target], ...] always shown
-//   variants: [[[questionId, target], ...], ...] one sub-array chosen by sub-roll
+//   fixed: [questionId, target] question always shown before the variant
+//   variants: list of [questionId, target] questions, one chosen by sub-roll
+//   fixedAfter: [questionId, target] question always shown after the variant
 //   emits: 'isThe' | 'isMan' — condition set by belonging to this category
 
 const CATEGORIES = {
@@ -235,7 +236,7 @@ const CATEGORIES = {
         <li>Ivan Rodriguez (Snatcher)</li>
       </ul>
     `,
-    fixed: [['fullName', 'fullName']],
+    fixed: ['fullName', 'fullName'],
     variants: [],
   },
   occupational: {
@@ -253,12 +254,12 @@ const CATEGORIES = {
         <li>Sam Porter Bridges (Death Stranding)</li>
       </ul>
     `,
-    fixed: [['occupation', 'last']],
+    fixed: ['occupation', 'last'],
     variants: [
-      [['personality', 'first']],
-      [['skill', 'first']],
-      [['nameHomonym', 'first']],
-      [['faveKurtRussell', 'first']],
+      ['personality', 'first'],
+      ['skill', 'first'],
+      ['nameHomonym', 'first'],
+      ['faveKurtRussell', 'first'],
     ],
   },
   horny: {
@@ -275,14 +276,14 @@ const CATEGORIES = {
         <li>Solid Snake (Metal Gear)</li>
       </ul>
     `,
-    fixed: [['petBreed', 'last']],
+    fixed: ['petBreed', 'last'],
     variants: [
-      [['matterState', 'first']],
-      [['naked', 'first']],
-      [['skill', 'first']],
-      [['zodiacSign', 'first']],
+      ['matterState', 'first'],
+      ['naked', 'first'],
+      ['skill', 'first'],
+      ['zodiacSign', 'first'],
     ],
-    fixedAfter: [['lickable', 'middle']],
+    fixedAfter: ['lickable', 'middle'],
   },
   the: {
     header: `
@@ -301,10 +302,10 @@ const CATEGORIES = {
     `,
     emits: 'isThe',
     variants: [
-      [['intangibleFear', 'first']],
-      [['tangibleFear', 'first']],
-      [['embarrassingMemory', 'first']],
-      [['militaryHardware', 'first']],
+      ['intangibleFear', 'first'],
+      ['tangibleFear', 'first'],
+      ['embarrassingMemory', 'first'],
+      ['militaryHardware', 'first'],
     ],
   },
   cool: {
@@ -322,14 +323,14 @@ const CATEGORIES = {
         <li>Skull Face (MGSV)</li>
       </ul>
     `,
-    fixed: [['madsMikkelsen', 'first']],
+    fixed: ['madsMikkelsen', 'first'],
     variants: [
-      [['faveKubrick', 'last']],
-      [['faveJoyDivision', 'last']],
-      [['nprScience', 'last']],
-      [['skill', 'last']],
-      [['intangibleFear', 'last']],
-      [['nameHomonym', 'last']],
+      ['faveKubrick', 'last'],
+      ['faveJoyDivision', 'last'],
+      ['nprScience', 'last'],
+      ['skill', 'last'],
+      ['intangibleFear', 'last'],
+      ['nameHomonym', 'last'],
     ],
   },
   violent: {
@@ -346,12 +347,12 @@ const CATEGORIES = {
         <li>The Fury (MGS3)</li>
       </ul>
     `,
-    fixed: [['stabbed', 'last']],
+    fixed: ['stabbed', 'last'],
     variants: [
-      [['nprScience', 'first']],
-      [['matterState', 'first']],
-      [['militaryHardware', 'first']],
-      [['tangibleFear', 'first']],
+      ['nprScience', 'first'],
+      ['matterState', 'first'],
+      ['militaryHardware', 'first'],
+      ['tangibleFear', 'first'],
     ],
   },
   lacksSubtext: {
@@ -369,7 +370,7 @@ const CATEGORIES = {
       </ul>
     `,
     emits: 'isMan',
-    fixed: [['recentActivity', 'first']],
+    fixed: ['recentActivity', 'first'],
     variants: [],
   },
 };
@@ -589,20 +590,20 @@ function buildForm() {
     catDiv.appendChild(catContent);
     catSection.appendChild(catDiv);
 
-    // Fixed questions
+    // Fixed question (always shown before the variant)
     if (cat.fixed) {
-      cat.fixed.forEach(([qId, target]) => renderQuestion(qId, target, catContent));
+      renderQuestion(cat.fixed[0], cat.fixed[1], catContent);
     }
 
     // Pick one variant by sub-roll
-    if (cat.variants && cat.variants.length > 0) {
-      const variantIdx = random(1, cat.variants.length);
-      cat.variants[variantIdx - 1].forEach(([qId, target]) => renderQuestion(qId, target, catContent));
+    if (cat.variants.length > 0) {
+      const variant = cat.variants[random(1, cat.variants.length) - 1];
+      renderQuestion(variant[0], variant[1], catContent);
     }
 
-    // Fixed questions after variant (e.g. optional middle-name checkbox in Horny)
+    // Fixed question after the variant (e.g. optional middle-name checkbox in Horny)
     if (cat.fixedAfter) {
-      cat.fixedAfter.forEach(([qId, target]) => renderQuestion(qId, target, catContent));
+      renderQuestion(cat.fixedAfter[0], cat.fixedAfter[1], catContent);
     }
   }
 
